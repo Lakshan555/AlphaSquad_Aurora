@@ -1,13 +1,14 @@
 import React from 'react';
-import { View, Text, ImageBackground, StyleSheet } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet, TouchableOpacity } from 'react-native';
 import PlanetDetailIconPalette from '../PlanetDetailIconPalette';
 import TextHeading from '../../atoms/texts/TextHeading';
 import TextBody from '../../atoms/texts/TextBody';
 
-const CardShip = ({ name, shipTypes, imageSrc }) => {
+const CardShip = ({ name, shipTypes, imageSrc, onPress }) => {
     // let types = ['type 1', 'type2', 'type3']
   return (
-    <ImageBackground source={{uri: imageSrc}} style={styles.card}>
+    <TouchableOpacity onPress={onPress}>
+      <ImageBackground source={{uri: imageSrc}} style={styles.card}>
         <View style={styles.cardContent}>
             <View style={styles.shipTypeContainer}>
                 <TextHeading
@@ -31,6 +32,7 @@ const CardShip = ({ name, shipTypes, imageSrc }) => {
             ))}
       </View>
     </ImageBackground>
+    </TouchableOpacity>
   );
 };
 

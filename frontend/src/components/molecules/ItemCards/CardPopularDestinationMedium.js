@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Text, ImageBackground, StyleSheet } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet, TouchableOpacity } from 'react-native';
 import TextHeading from '../../atoms/texts/TextHeading';
 import TextBody from '../../atoms/texts/TextBody';
 
-const CardPopularDestinationMedium = ({ name, cost, imageSrc }) => {
+const CardPopularDestinationMedium = ({ name, cost, imageSrc, onPress }) => {
   return (
-    <ImageBackground source={{uri: imageSrc}} style={styles.card} imageStyle={{width: 213, minHeight: 296, maxHeight: 296, marginRight: 28, borderRadius: 22, resizeMode: 'cover'}}>
+    <TouchableOpacity onPress={onPress}>
+      <ImageBackground source={{uri: imageSrc}} style={styles.card} imageStyle={{width: 213, minHeight: 296, maxHeight: 296, marginRight: 28, borderRadius: 22, resizeMode: 'cover'}}>
           <View style={styles.cardContent}>
             <TextHeading
                 value={name}
@@ -26,6 +27,7 @@ const CardPopularDestinationMedium = ({ name, cost, imageSrc }) => {
               ></TextBody>
         </View>
     </ImageBackground>
+    </TouchableOpacity>
   );
 };
 
