@@ -33,7 +33,7 @@ const SelectedPlanetDetailsPage = () => {
       <View style={[styles.planetDetailsPageContainer, {}]}>
         <View style={styles.imageContainer}>
           <Image
-            source={require("../assets/images/Mars.png")}
+            source={{uri: data.imageSrc}}
             style={styles.dynamicImage}
           />
           <View style={styles.favIconContainer}>
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   favIconContainer: {
     position: "absolute",
     alignSelf: "center",
-    top: "90%",
+    top: "92%",
     right: "10%",
     transform: [{ translateY: -15 }], // move 15 units upward from its original position
   },
