@@ -3,16 +3,23 @@ import { View, Text, ImageBackground, StyleSheet, TouchableOpacity } from 'react
 import PlanetDetailIconPalette from '../PlanetDetailIconPalette';
 import TextHeading from '../../atoms/texts/TextHeading';
 import TextBody from '../../atoms/texts/TextBody';
+import { useNavigation } from '@react-navigation/native';
 
-const CardShip = ({ name, shipTypes, imageSrc, onPress }) => {
+const CardShip = ({ data }) => {
     // let types = ['type 1', 'type2', 'type3']
+  
+    const navigation = useNavigation();
+
+  const onSubmit = () => {
+    navigation.navigate("SelectedShipDetailsPage", {data});
+  }
   return (
-    <TouchableOpacity onPress={onPress}>
-      <ImageBackground source={{uri: imageSrc}} style={styles.card}>
+    <TouchableOpacity onPress={onSubmit}>
+      <ImageBackground source={{uri: data.imageSrc}} style={styles.card}>
         <View style={styles.cardContent}>
             <View style={styles.shipTypeContainer}>
                 <TextHeading
-                value={name}
+                value={data.name}
                 textAlign={"center"}
                       lineHeight={30}
                       fontSize={20}
@@ -20,7 +27,7 @@ const CardShip = ({ name, shipTypes, imageSrc, onPress }) => {
                       color={'black'}
               ></TextHeading>
             </View>
-            {shipTypes.map((shipType, index) => (
+            {data.shipTypes.map((shipType, index) => (
               <TextBody
                 value = {`${index+1}. ${shipType}`}
                 key={index}

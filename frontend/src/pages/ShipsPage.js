@@ -28,24 +28,28 @@ export default function ShipsPage() {
       id: 1,
       name: 'Community Ship',
       shipTypes: ['type1', 'type2', 'type3'],
+      cost: '$ 3900.00',
       imageSrc: 'https://s3-alpha-sig.figma.com/img/0716/8ac3/e5c72b26a1aff62254387cab45180be6?Expires=1693180800&Signature=KVXrhrCi9z-QOE0wRT17w6X10u3oB5Zf7AzMIKJ9EtO4GSWYOgJznE8ouOmlHzbi3wXFoK3SUJwOWAp8pNb7yEatqVr8CdVHr4H~FFUtxGLDmIRR2IF-aYdStJb1JBIjQS5Otx5YtrHe2NG~eblCTbiTk9lukCZqAP7zO6Pa~61luCRHBJv~pQu3XHqZIuxOmHT-n9TIEh~-iXcTIO7p~Yo5V62Bva~5BH2QUCaAEvJ0M-NNEnzv9Eol9U-rJncQx~hW4MkDNHwsoPmOUWVeUiBJNAQBdLYF0Tb~xzRIJAMKr8kcUYkPiHofTSQMlZjPuAnZqvvy4~rYE8Rkep0wNg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
     },
     {
       id: 2,
       name: 'Federation',
       shipTypes: ['type1', 'type2', 'type3'],
+      cost: '$ 5000.00',
       imageSrc: 'https://s3-alpha-sig.figma.com/img/fb84/34eb/c05fbb8d6ab700ced1cf96e967ac91ce?Expires=1693180800&Signature=Z9-B8GRA3-hQt0DbUvycgRdfrIdIElWOVSw4GUsVkbAlV3LpPTFZ4HwFnpUom0TRBtxVSTljy46Uzc4P05UAFRLQY3ikaxrF70txNQyw2qJlciRjHm5HjOB8breZoj4EDKlAH1FSRzRrGZRyqIOJfA0UBUtfWMy8VmAV4gGoq7pYaswhaubKwmuboAFrBtvKn8u5zSRrb0eUWyWUCymCodseT2pyeprWa5IvADjCyIzeDPxvhckMnkoTZi0GK0tQeB~q5kZtEEt8exiGjckIB6azFbgrT2cOX31z3QU8z7sXLbJlTR-ha-1WFpnjrIQiX0YZlryCwPt4q4P99UWmiA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
     },
     {
         id: 3,
         name: 'Community Ship',
-        shipTypes: ['type1', 'type2', 'type3'],
+      shipTypes: ['type1', 'type2', 'type3'],
+      cost: '$ 3900.00',
         imageSrc: 'https://s3-alpha-sig.figma.com/img/0716/8ac3/e5c72b26a1aff62254387cab45180be6?Expires=1693180800&Signature=KVXrhrCi9z-QOE0wRT17w6X10u3oB5Zf7AzMIKJ9EtO4GSWYOgJznE8ouOmlHzbi3wXFoK3SUJwOWAp8pNb7yEatqVr8CdVHr4H~FFUtxGLDmIRR2IF-aYdStJb1JBIjQS5Otx5YtrHe2NG~eblCTbiTk9lukCZqAP7zO6Pa~61luCRHBJv~pQu3XHqZIuxOmHT-n9TIEh~-iXcTIO7p~Yo5V62Bva~5BH2QUCaAEvJ0M-NNEnzv9Eol9U-rJncQx~hW4MkDNHwsoPmOUWVeUiBJNAQBdLYF0Tb~xzRIJAMKr8kcUYkPiHofTSQMlZjPuAnZqvvy4~rYE8Rkep0wNg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
       },
       {
         id: 4,
         name: 'Federation',
         shipTypes: ['type1', 'type2', 'type3'],
+      cost: '$ 3900.00',
         imageSrc: 'https://s3-alpha-sig.figma.com/img/fb84/34eb/c05fbb8d6ab700ced1cf96e967ac91ce?Expires=1693180800&Signature=Z9-B8GRA3-hQt0DbUvycgRdfrIdIElWOVSw4GUsVkbAlV3LpPTFZ4HwFnpUom0TRBtxVSTljy46Uzc4P05UAFRLQY3ikaxrF70txNQyw2qJlciRjHm5HjOB8breZoj4EDKlAH1FSRzRrGZRyqIOJfA0UBUtfWMy8VmAV4gGoq7pYaswhaubKwmuboAFrBtvKn8u5zSRrb0eUWyWUCymCodseT2pyeprWa5IvADjCyIzeDPxvhckMnkoTZi0GK0tQeB~q5kZtEEt8exiGjckIB6azFbgrT2cOX31z3QU8z7sXLbJlTR-ha-1WFpnjrIQiX0YZlryCwPt4q4P99UWmiA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
       },
   ];
@@ -73,9 +77,7 @@ export default function ShipsPage() {
                       keyExtractor={(item) => item.id.toString()}
                       renderItem={({ item }) => (
                         <CardShip
-                          name={item.name}
-                          shipTypes={item.shipTypes}
-                          imageSrc={item.imageSrc}
+                          data={item}
                         />
                       )}
                       style={styles.cardList}
