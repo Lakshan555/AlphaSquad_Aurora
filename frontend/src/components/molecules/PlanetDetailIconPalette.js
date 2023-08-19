@@ -2,7 +2,7 @@ import { StyleSheet, View } from "react-native"
 import IconPlanet from "../atoms/icons/IconPlanet";
 import TextBody from "../atoms/texts/TextBody";
 
-export default PlanetDetailsIconPalette = ({data}) => {
+export default PlanetDetailsIconPalette = ({rating, temp, duration}) => {
     return (
         <View style={styles.planetIconContainer}>
             <View style={styles.iconGroup}>
@@ -13,7 +13,7 @@ export default PlanetDetailsIconPalette = ({data}) => {
                 </View>
                 <View style={styles.iconInfo}>
                     <TextBody
-                        value={"4.5"}
+                        value={rating}
                         fontSize={18}
                         fontWeight={700}
                         lineHeight={27}
@@ -36,7 +36,7 @@ export default PlanetDetailsIconPalette = ({data}) => {
                 </View>
                 <View style={styles.iconInfo}>
                     <TextBody
-                        value={"38 °C"}
+                        value={temp}
                         fontSize={18}
                         fontWeight={700}
                         lineHeight={27}
@@ -59,7 +59,7 @@ export default PlanetDetailsIconPalette = ({data}) => {
                 </View>
                 <View style={styles.iconInfo}>
                     <TextBody
-                        value={"8 Days"}
+                        value={duration}
                         fontSize={18}
                         fontWeight={700}
                         lineHeight={27}

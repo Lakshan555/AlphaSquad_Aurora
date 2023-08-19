@@ -12,9 +12,7 @@ import TextHeading from "../components/atoms/texts/TextHeading";
 import IconEmergencyAssistance from "../components/atoms/icons/IconEmergencyAssistance";
 
 export default function Test1({ navigation }) {
-  const onSubmit = () => {
-    navigation.navigate("SelectedPlanetDetailsPage");
-  };
+
   return (
     <BackgroundTemplate>
       <Text>Open up App.js to start working on your app!</Text>
@@ -46,14 +44,12 @@ export default function Test1({ navigation }) {
         />
         <IconEmergencyAssistance
           source={require("../assets/images/emergencyIcons/UniversalTranslator.png")}
-          onPress={onSubmit}
         />
       </View>
 
       {/* iconNavigationBar can be used to display: house, case, earth, rocket, profile */}
       <IconNavigationBar
         source={require("../assets/images/navigationBar/earth.png")}
-        onPress={onSubmit}
       />
 
       {/* icon planet can be used to display: rating.png, temperature.png, cloud.png */}

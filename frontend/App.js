@@ -6,6 +6,7 @@ import SelectedPlanetDetailsPage from "./src/pages/SelectedPlanetDetailsPage";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CreateNewBookingPage from "./src/pages/CreateNewBookingPage";
 import CreateNewBookingSecondPage from "./src/pages/CreateNewBookingSecondPage";
+import SelectedShipDetailsPage from "./src/pages/SelectedShipDetailsPage";
 const Stack = createNativeStackNavigator();
 
 const MyStack = () => {
@@ -23,8 +24,8 @@ const MyStack = () => {
       />
       <Stack.Screen
         options={{ headerShown: false }}
-        component={Test1}
-        name="Test1"
+        component={SelectedShipDetailsPage}
+        name="SelectedShipDetailsPage"
       />
       <Stack.Screen
         options={{ headerShown: false }}

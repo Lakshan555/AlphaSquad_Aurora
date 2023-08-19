@@ -1,9 +1,21 @@
-import React from "react";
-import { Text } from "react-native";
+import React, { useState } from "react";
+import { Text, View } from "react-native";
 import { StyleSheet } from "react-native";
+import {useFonts} from 'expo-font';
 
-export default function TextHeading({ value, fontSize, lineHeight, fontWeight, textAlign, marginBottom,  opacity}) {
+// use this for texts which are above 400 font weight
+export default function TextHeading({ value, fontSize, lineHeight, fontWeight, textAlign, marginBottom, color, opacity}) {
   
+  // set custom fonts
+  const [loaded] = useFonts({
+    Urbanist: require('../../../assets/fonts/Urbanist-Bold.ttf'),
+    UrbanistSemiBold: require('../../../assets/fonts/Urbanist-SemiBold.ttf')
+  });
+
+  if (!loaded) {
+    return null;
+  }
+
   const customStyles = {
     ...styles.Heading,
     fontSize: fontSize || styles.Heading.fontSize, // Use prop value or default
@@ -11,10 +23,15 @@ export default function TextHeading({ value, fontSize, lineHeight, fontWeight, t
     fontWeight: fontWeight || styles.Heading.fontWeight,
     textAlign: textAlign || styles.Heading.textAlign, 
     marginBottom: marginBottom || styles.Heading.marginBottom,
+    color: color || styles.Heading.color,
     opacity: opacity || styles.Heading.opacity,
   };
 
-  return <Text style={customStyles}>{value}</Text>;
+  return (
+    <View>
+      <Text style={{ ...customStyles, fontFamily: 'Urbanist' }}>{value}</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -22,8 +39,8 @@ const styles = StyleSheet.create({
     fontSize: 36,
     color: 'white',
     lineHeight: 39,
-    fontStyle: "normal",
-    fontWeight: 700,
+    // fontStyle: "bold",
+    fontWeight: 600,
     textAlign: "left",
     marginBottom: 0,
     opacity: 1,

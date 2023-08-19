@@ -16,28 +16,38 @@ import TextBody from "../components/atoms/texts/TextBody";
 import IconFavorite from "../components/atoms/icons/IconFavorite";
 import IconPlanet from "../components/atoms/icons/IconPlanet";
 import PlanetDetailIconPalette from "../components/molecules/PlanetDetailIconPalette";
+import { useRoute } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 
-const SelectedPlanetDetailsPage = ({ img, data }) => {
+const SelectedPlanetDetailsPage = () => {
+
+  // Get the route object
+  const route = useRoute();
+  const navigation = useNavigation();
+
+  // Access the data passed via props
+  const data = route.params?.data;
+
   return (
     <BackgroundTemplate>
       <View style={[styles.planetDetailsPageContainer, {}]}>
         <View style={styles.imageContainer}>
           <Image
-            source={require("../assets/images/Mars.png")}
+            source={{uri: data.imageSrc}}
             style={styles.dynamicImage}
           />
           <View style={styles.favIconContainer}>
             <IconFavorite></IconFavorite>
           </View>
           <View style={styles.backIconContainer}>
-            <IconBackwardArrow></IconBackwardArrow>
+            <IconBackwardArrow onPress={() => navigation.goBack()}></IconBackwardArrow>
           </View>
         </View>
         <ScrollView>
           <View style={styles.secondHalf}>
             <View style={styles.textContainer}>
               <TextHeading
-                value={"Mars"}
+                value={data.name}
                 textAlign={"left"}
                 lineHeight={54}
                 marginBottom={8}
@@ -62,15 +72,9 @@ const SelectedPlanetDetailsPage = ({ img, data }) => {
                   ></TextBody>
                 </TouchableOpacity>
               </View>
-              <PlanetDetailIconPalette></PlanetDetailIconPalette>
+              <PlanetDetailIconPalette rating={data.rating} temp={data.temperature} duration={data.duration}></PlanetDetailIconPalette>
               <TextBody
-                value={
-                  "Mars is the fourth planet from the sun and has a distinct rusty red appearance and two unusual moons.\n\n" +
-                  "The Red Planet is a cold, desert world within our solar system. It has a very thin atmosphere, but the dusty, lifeless (as far as we know it) planet is far from dull." +
-                  " Phenomenal dust storms can grow so large they engulf the entire planet, temperatures can get so cold that carbon dioxide in the atmosphere condenses directly into snow or frost, and marsquakes — a Mars version of an earthquake — regularly shake things up.\n\n" +
-                  "Therefore, it is no surprise that this little red rock continues to intrigue scientists and is one of the most explored bodies in the solar system, according to NASA Science." +
-                  "The Red Planet is a cold, desert world within our solar system. It has a very thin atmosphere, but the dusty, lifeless (as far as we know it) planet is far from dull.\n\n"
-                }
+                value={data.details}
                 textAlign={"justify"}
                 fontSize={14}
                 fontWeight={400}
@@ -83,18 +87,18 @@ const SelectedPlanetDetailsPage = ({ img, data }) => {
             <View style={styles.priceText}>
               <TextBody
                 value={"Total Price"}
-                fontSize={18}
+                fontSize={19}
                 fontWeight={600}
                 color={"black"}
               ></TextBody>
             </View>
             <View style={styles.price}>
               <TextBody
-                value={"$ 3000.00"}
+                value={data.cost}
                 fontSize={22}
                 fontWeight={700}
                 color={"black"}
-                lineHeight={28}
+                lineHeight={26}
               ></TextBody>
             </View>
           </View>
@@ -142,7 +146,7 @@ const styles = StyleSheet.create({
   favIconContainer: {
     position: "absolute",
     alignSelf: "center",
-    top: "90%",
+    top: "92%",
     right: "10%",
     transform: [{ translateY: -15 }], // move 15 units upward from its original position
   },
@@ -186,7 +190,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     backgroundColor: "white",
     paddingHorizontal: 40,
-    paddingVertical: 20,
+    paddingVertical: 18,
     borderTopLeftRadius: 22,
     borderTopRightRadius: 22,
   },
@@ -196,8 +200,11 @@ const styles = StyleSheet.create({
     color: "black",
     // backgroundColor: 'yellow',
     paddingRight: 75,
+    textAlignVertical: 'center'
   },
-  priceText: {},
+  priceText: {
+    paddingTop: 5
+  },
   price: {},
   bookNowBtnCover: {
     backgroundColor: "#310D4E",
