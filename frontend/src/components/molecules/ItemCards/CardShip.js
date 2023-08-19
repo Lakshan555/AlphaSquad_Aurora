@@ -22,7 +22,7 @@ const CardShip = ({ name, shipTypes, imageSrc, onPress }) => {
             </View>
             {shipTypes.map((shipType, index) => (
               <TextBody
-                value = {shipType}
+                value = {`${index+1}. ${shipType}`}
                 key={index}
                 textAlign={"center"}
                 fontSize={14}
