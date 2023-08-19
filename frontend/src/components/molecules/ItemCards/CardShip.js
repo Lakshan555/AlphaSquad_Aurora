@@ -36,7 +36,8 @@ const CardShip = ({ name, shipTypes, imageSrc }) => {
 
 const styles = StyleSheet.create({
   card: {
-        width: '100%',
+        maxWidth: 325, //if this is given 100%, the shipPage width also will change according to the paddings given to this card
+        minWidth: 325,
         height: 178,
         // marginHorizontal: 15,
         marginBottom: 20,
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         paddingTop: 50,
-        paddingHorizontal: 50,
+        paddingHorizontal: 70,
         // backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
     shipTypeContainer: {
