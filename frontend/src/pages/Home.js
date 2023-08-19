@@ -7,6 +7,7 @@ import TextBody from '../components/atoms/texts/TextBody'
 import IconEmergencyAssistance from '../components/atoms/icons/IconEmergencyAssistance';
 import TextHeading from '../components/atoms/texts/TextHeading';
 import CardPopularDestinationLarge from '../components/molecules/ItemCards/CardPopularDestinationLarge';
+import DistressBeaconPopup from '../components/molecules/DistressBeaconPopup';
 
 export default function Home() {
   // const [data, setData] = useState([]);
@@ -98,10 +99,21 @@ export default function Home() {
     };
   }, []);
 
+  const [isPopupVisible, setPopupVisible] = useState(false);
+
+  const openPopup = () => {
+    setPopupVisible(true);
+  };
+
+  const closePopup = () => {
+    setPopupVisible(false);
+  };
+
   return (
     <BackgroundTemplate>
         <View style={styles.container}>
-            <View style={styles.topPartContainer}>
+        <>
+        <View style={styles.topPartContainer}>
             <View style={styles.topPart}>
               <View style={styles.appNameContainer}>
                 <Image source={require('../assets/images/appLogo.png')} style={{marginRight: 12, width: 22, height: 19}}></Image>
@@ -138,7 +150,8 @@ export default function Home() {
               <View style={[styles.emergencyItemContainer, {marginRight:  '4%'}]}>
                   <View style={styles.emergencyIcon}>
                       <IconEmergencyAssistance
-                        source={require("../assets/images/emergencyIcons/DistressBeacon.png")}
+                      source={require("../assets/images/emergencyIcons/DistressBeacon.png")}
+                      onPress={openPopup}
                       />
                   </View>
                   <View style={styles.emergencyTitle}>
@@ -159,40 +172,42 @@ export default function Home() {
             </View> 
             </View>
             {/* from slider onwards comes below */}
-        {isKeyboardOpen ? <View style={styles.secondPartContainer}></View> : 
-          <>
-          <View style={styles.secondPartContainer}>
-            <ScrollView>
-                <View style={styles.titleOuterContainer}>
-                  <View style={styles.commonTitleContainer}>
-                            <TextHeading value={'Popular Destinations'} fontSize={26} lineHeight={39} fontWeight={600} textAlign={'center'}></TextHeading>
-                            <TouchableOpacity><TextBody value={'See all'} fontSize={14} lineHeight={24} fontWeight={600} color={'blue'} textAlign={'center'}></TextBody></TouchableOpacity>
-                  </View>
-                </View>
-                <View style={styles.sliderContainer}>
-                  <PopularPlanetSlider data={allPlanets}/>
-                </View>
-                <View style={styles.titleOuterContainer}>
-                  <View style={styles.commonTitleContainer}>
-                            <TextHeading value={'Top Adventure Trips'} fontSize={26} lineHeight={39} fontWeight={600} textAlign={'center'}></TextHeading>
-                            <TouchableOpacity><TextBody value={'See all'} fontSize={14} lineHeight={24} fontWeight={600} color={'blue'} textAlign={'center'}></TextBody></TouchableOpacity>
-                  </View>
-                </View>
-                <View style={styles.listContainer}>
-                  <FlatList
-                      data={allPlanets}
-                      keyExtractor={(item) => item.id.toString()}
-                      renderItem={({ item }) => (
-                        <CardPopularDestinationLarge
-                          data={item}
+            {isKeyboardOpen ? <View style={styles.secondPartContainer}></View> : 
+              <>
+              <View style={styles.secondPartContainer}>
+                <ScrollView>
+                    <View style={styles.titleOuterContainer}>
+                      <View style={styles.commonTitleContainer}>
+                                <TextHeading value={'Popular Destinations'} fontSize={26} lineHeight={39} fontWeight={600} textAlign={'center'}></TextHeading>
+                                <TouchableOpacity><TextBody value={'See all'} fontSize={14} lineHeight={24} fontWeight={600} color={'blue'} textAlign={'center'}></TextBody></TouchableOpacity>
+                      </View>
+                    </View>
+                    <View style={styles.sliderContainer}>
+                      <PopularPlanetSlider data={allPlanets}/>
+                    </View>
+                    <View style={styles.titleOuterContainer}>
+                      <View style={styles.commonTitleContainer}>
+                                <TextHeading value={'Top Adventure Trips'} fontSize={26} lineHeight={39} fontWeight={600} textAlign={'center'}></TextHeading>
+                                <TouchableOpacity><TextBody value={'See all'} fontSize={14} lineHeight={24} fontWeight={600} color={'blue'} textAlign={'center'}></TextBody></TouchableOpacity>
+                      </View>
+                    </View>
+                    <View style={styles.listContainer}>
+                      <FlatList
+                          data={allPlanets}
+                          keyExtractor={(item) => item.id.toString()}
+                          renderItem={({ item }) => (
+                            <CardPopularDestinationLarge
+                              data={item}
+                            />
+                          )}
+                          style={styles.cardList}
                         />
-                      )}
-                      style={styles.cardList}
-                    />
+                    </View>
+                  </ScrollView>
                 </View>
-              </ScrollView>
-            </View>
           </>}
+        </>
+          <DistressBeaconPopup visible={isPopupVisible} onClose={closePopup} />
             
           </View>
     </BackgroundTemplate>
