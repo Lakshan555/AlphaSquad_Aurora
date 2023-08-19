@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, FlatList } from 'react-native';
 import BackgroundTemplate from "../components/templates/BackgroundTemplate";
-import ImageSlider from '../components/organisms/ImageSliders/PopularPlanetSlider';
+import PopularPlanetSlider from '../components/organisms/ImageSliders/PopularPlanetSlider';
 import SearchBar from '../components/molecules/SearchBar';
 import TextBody from '../components/atoms/texts/TextBody'
 import IconEmergencyAssistance from '../components/atoms/icons/IconEmergencyAssistance';
@@ -21,37 +21,33 @@ export default function Home() {
   //     });
   // }, [apiUrl]);
   
-  const data = [
+  const allPlanets = [
     {
       id: 1,
-      title: 'Product 1',
-      price: 29.99,
-      imageSrc: '../../../assets/images/mars2.jpeg',
+      name: 'Mars',
+      cost: '$4200',
+      imageSrc: 'https://s3-alpha-sig.figma.com/img/41f6/6690/a676009d8b4985f74650d8491df37085?Expires=1693180800&Signature=D26gk0rg6EFpZTcmt86nDODb46dBGnNbuNOatV3q8ENUDj3w9~zInWRAvwMH5GHE8fVVHvlzlOQB~lvMMSOKsphkIaDPUHPWU1pIJw-C1nnaP1JTLF7BAu2CKNdWPnq3OnkiackP318TYknkj9HpZl~EiG04EoTPLbNxFymbo2CO2zkLMG2TIh~y9LHebbStCZVPNTIdGN4VcyyTfNsJhI4gMBlppirN4vSRZEWMZik23OGbE6vnap1dyzlFDR5ZMaJzaUpgzjTmXWimkk0dWgYU3p001ovO2c9on-FY9SJbkl0DdLJN6U3j6HxDgzkxP~88hOf9UCB5lY-g-OkvZA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
     },
     {
       id: 2,
-      title: 'Product 2',
-      price: 19.99,
-      imageSrc: '../assets/images/mars2.jpeg',
+      name: 'Mercury',
+      cost: '$4200',
+      imageSrc: 'https://s3-alpha-sig.figma.com/img/de51/b8fa/04339ff0abc9268a3f4df02a1887e193?Expires=1693180800&Signature=a-EN0XQmZbYGJLLLoxZxWJkUCruyUZoWQi3EjCSvek7UUb8b6LQRNy-g5MK~3XalDL6ZSfuKU~SU4~f-q1ZBcGjtPozveynfGBW9o1wjBVW49oLgxpJ0hXCN3Clrj5mNztYJxqU6VSbrmFE4TgQRRP2C3rnKH9PDFMQe9T6yIYFYwt-qrCezWPGeCO7zT7-N4yLwdPZ8b9wiO7rZ0DTtYhAqlR3HM3yZZYs07P3-PJv6Mre-sLQNq04a5yONSqGjIx~P~MG7Zmj9Bxgk9FsoT4JowmfR99B1Mo2oC0xBYSgDL8fJS-32A80il~NsLDPNWsQmth3OAE2L4I8V9nQDEw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
     },
     {
       id: 3,
-      title: 'Product 3',
-      price: 39.99,
-      imageSrc: '../assets/images/SignIn.png',
+      name: 'Jupiter',
+      cost: '$4200',
+      imageSrc: 'https://s3-alpha-sig.figma.com/img/41f6/6690/a676009d8b4985f74650d8491df37085?Expires=1693180800&Signature=D26gk0rg6EFpZTcmt86nDODb46dBGnNbuNOatV3q8ENUDj3w9~zInWRAvwMH5GHE8fVVHvlzlOQB~lvMMSOKsphkIaDPUHPWU1pIJw-C1nnaP1JTLF7BAu2CKNdWPnq3OnkiackP318TYknkj9HpZl~EiG04EoTPLbNxFymbo2CO2zkLMG2TIh~y9LHebbStCZVPNTIdGN4VcyyTfNsJhI4gMBlppirN4vSRZEWMZik23OGbE6vnap1dyzlFDR5ZMaJzaUpgzjTmXWimkk0dWgYU3p001ovO2c9on-FY9SJbkl0DdLJN6U3j6HxDgzkxP~88hOf9UCB5lY-g-OkvZA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    },
+    {
+      id: 4,
+      name: 'Venus',
+      cost: '$4200',
+      imageSrc: 'https://s3-alpha-sig.figma.com/img/41f6/6690/a676009d8b4985f74650d8491df37085?Expires=1693180800&Signature=D26gk0rg6EFpZTcmt86nDODb46dBGnNbuNOatV3q8ENUDj3w9~zInWRAvwMH5GHE8fVVHvlzlOQB~lvMMSOKsphkIaDPUHPWU1pIJw-C1nnaP1JTLF7BAu2CKNdWPnq3OnkiackP318TYknkj9HpZl~EiG04EoTPLbNxFymbo2CO2zkLMG2TIh~y9LHebbStCZVPNTIdGN4VcyyTfNsJhI4gMBlppirN4vSRZEWMZik23OGbE6vnap1dyzlFDR5ZMaJzaUpgzjTmXWimkk0dWgYU3p001ovO2c9on-FY9SJbkl0DdLJN6U3j6HxDgzkxP~88hOf9UCB5lY-g-OkvZA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
     },
   ];
   
-  const planetImgSrcs = [
-    require('../assets/images/mars2.jpeg'), 
-    require('../assets/images/mercury.jpeg'), 
-    require('../assets/images/mars2.jpeg'), 
-    require('../assets/images/SignIn.png'), 
-    require('../assets/images/mars2.jpeg'), 
-    require('../assets/images/mars2.jpeg'), 
-    require('../assets/images/mars2.jpeg'), 
-  ];
-
   return (
     <BackgroundTemplate>
         <View style={styles.container}>
@@ -122,7 +118,7 @@ export default function Home() {
                   </View>
                 </View>
                 <View style={styles.sliderContainer}>
-                  <ImageSlider imageSources={planetImgSrcs} />
+                  <PopularPlanetSlider data={allPlanets} />
                 </View>
                 <View style={styles.titleOuterContainer}>
                   <View style={styles.commonTitleContainer}>
@@ -132,12 +128,12 @@ export default function Home() {
                 </View>
                 <View style={styles.listContainer}>
                   <FlatList
-                      data={data}
+                      data={allPlanets}
                       keyExtractor={(item) => item.id.toString()}
                       renderItem={({ item }) => (
                         <CardPopularDestinationLarge
-                          title={item.title}
-                          price={item.price}
+                          title={item.name}
+                          cost={item.cost}
                           imageSrc={item.imageSrc}
                         />
                       )}
