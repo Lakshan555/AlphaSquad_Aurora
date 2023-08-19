@@ -111,14 +111,14 @@ const styles = StyleSheet.create({
     // marginHorizontal: 20,
     display: 'flex',
       flexDirection: 'column',
-      height: '51%'
+      height: '53%'
     
   },
   topPart: {
     paddingHorizontal: 32,
   },
   secondPartContainer: {
-    height: '49%'
+    height: '47%'
   },
   appNameContainer: {
     display: 'flex',
@@ -149,11 +149,9 @@ const styles = StyleSheet.create({
     maxHeight: 296,
   },
   listContainer: {
-    marginHorizontal: 16,
-    // marginTop: -15,
-    paddingBottom: 30,
+    marginHorizontal: '5%', // double check
   },
   cardList: {
-    padding: 15
+    paddingBottom: 15
   }
 });
