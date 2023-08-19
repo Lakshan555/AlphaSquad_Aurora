@@ -1,16 +1,17 @@
 // ImageSlider.js
 import React from 'react';
 import { ScrollView, Image, StyleSheet } from 'react-native';
+import CardPopularDestinationMedium from '../../molecules/ItemCards/CardPopularDestinationMedium';
 
-const PopularPlanetSlider = ({ imageSources }) => {
+const PopularPlanetSlider = ({ data }) => {
   return (
     <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.sliderContainer}
     >
-      {imageSources.map((source, index) => (
-        <Image key={index} source={source} style={styles.imageCard} />
+      {data.map((item, index) => (
+        <CardPopularDestinationMedium key={index} imageSrc={item.imageSrc} name={item.name} cost={ item.cost} />
       ))}
     </ScrollView>
   );
@@ -20,14 +21,6 @@ const styles = StyleSheet.create({
   sliderContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
-  },
-  imageCard: {
-    width: 214,
-    minHeight: 296,
-    maxHeight: 296,
-    marginRight: 28,
-    borderRadius: 22,
-    resizeMode: 'cover'
   },
 });
 
