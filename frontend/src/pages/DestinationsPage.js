@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, FlatList } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, FlatList, Keyboard } from 'react-native';
 import BackgroundTemplate from "../components/templates/BackgroundTemplate";
 import PopularPlanetSlider from '../components/organisms/ImageSliders/PopularPlanetSlider';
 import SearchBar from '../components/molecules/SearchBar';
@@ -98,6 +98,24 @@ export default function DestinationsPage() {
           imageSrc: 'https://s3-alpha-sig.figma.com/img/771d/3f75/057e83e1dad4192e4e715eed9a07d951?Expires=1693180800&Signature=i~ede7EPCDefngoJwxuJgSuruw0fBucEbI-6ugoOtjC06DHJQyzzh0jrVITwWYyEouKcVI1ACsMwtfLu-woJwke5WmUCjraxg7FsAS~KOhPpn4IQnP9g86TJrxJ3nVweq~ZcWf8AwOl6GFeTPMNBEc4UDJkIrDQI9BXR9~BjVq53rOtIfaPTk1uokMyTvHJWKJ6e6VuYq666SoCLZAgKWLTQdsHtZ8cLYs44pbKt6r~zZnA8hJMzP8-4gsQRWYSvvRysff1VCuWaMZcXX6TQorPo8MBva7ARXaDwtLP~gHohQewYYZLTG1zbps2cQLL3RU-TV0tuD75d-uhxQvAW0g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
       },
   ];
+
+  const [isKeyboardOpen, setKeyboardOpen] = useState(false);
+
+  // Listen for keyboard events
+  useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () => {
+      setKeyboardOpen(true);
+    });
+    const keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () => {
+      setKeyboardOpen(false);
+    });
+
+    // Clean up event listeners
+    return () => {
+      keyboardDidShowListener.remove();
+      keyboardDidHideListener.remove();
+    };
+  }, []);
   
   return (
     <BackgroundTemplate>
@@ -123,14 +141,9 @@ export default function DestinationsPage() {
                 </View>
             </View>
             {/* from list onwards comes below */}
-            <View style={styles.secondPartContainer}>
-            <ScrollView>
-                {/* <View style={styles.titleOuterContainer}>
-                  <View style={styles.commonTitleContainer}>
-                            <TextHeading value={'Top Adventure Trips'} fontSize={26} lineHeight={39} fontWeight={600} textAlign={'center'}></TextHeading>
-                            <TouchableOpacity><TextBody value={'See all'} fontSize={14} lineHeight={24} fontWeight={600} color={'blue'} textAlign={'center'}></TextBody></TouchableOpacity>
-                  </View>
-                </View> */}
+        {isKeyboardOpen ? <View style={styles.secondPartContainer}></View> : <>
+          <View style={styles.secondPartContainer}>
+              <ScrollView>
                 <View style={styles.listContainer}>
                   <FlatList
                       data={allPlanets}
@@ -145,7 +158,7 @@ export default function DestinationsPage() {
                 </View>
               </ScrollView>
             </View>
-            
+        </>}
           </View>
     </BackgroundTemplate>
   );

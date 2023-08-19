@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, FlatList } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, FlatList, Keyboard } from 'react-native';
 import BackgroundTemplate from "../components/templates/BackgroundTemplate";
 import PopularPlanetSlider from '../components/organisms/ImageSliders/PopularPlanetSlider';
 import SearchBar from '../components/molecules/SearchBar';
@@ -80,6 +80,24 @@ export default function Home() {
     },
   ];
 
+  const [isKeyboardOpen, setKeyboardOpen] = useState(false);
+
+  // Listen for keyboard events
+  useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () => {
+      setKeyboardOpen(true);
+    });
+    const keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () => {
+      setKeyboardOpen(false);
+    });
+
+    // Clean up event listeners
+    return () => {
+      keyboardDidShowListener.remove();
+      keyboardDidHideListener.remove();
+    };
+  }, []);
+
   return (
     <BackgroundTemplate>
         <View style={styles.container}>
@@ -141,7 +159,9 @@ export default function Home() {
             </View> 
             </View>
             {/* from slider onwards comes below */}
-            <View style={styles.secondPartContainer}>
+        {isKeyboardOpen ? <View style={styles.secondPartContainer}></View> : 
+          <>
+          <View style={styles.secondPartContainer}>
             <ScrollView>
                 <View style={styles.titleOuterContainer}>
                   <View style={styles.commonTitleContainer}>
@@ -172,6 +192,7 @@ export default function Home() {
                 </View>
               </ScrollView>
             </View>
+          </>}
             
           </View>
     </BackgroundTemplate>
