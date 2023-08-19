@@ -13,24 +13,6 @@ import IconEmergencyAssistance from "../components/atoms/icons/IconEmergencyAssi
 
 export default function Test1({ navigation }) {
 
-  const onSubmit = () => {
-    const planetData = {
-      id: 1,
-      name: 'Mars',
-      cost: '$ 4200.00',
-      imageSrc: 'https://s3-alpha-sig.figma.com/img/41f6/6690/a676009d8b4985f74650d8491df37085?Expires=1693180800&Signature=D26gk0rg6EFpZTcmt86nDODb46dBGnNbuNOatV3q8ENUDj3w9~zInWRAvwMH5GHE8fVVHvlzlOQB~lvMMSOKsphkIaDPUHPWU1pIJw-C1nnaP1JTLF7BAu2CKNdWPnq3OnkiackP318TYknkj9HpZl~EiG04EoTPLbNxFymbo2CO2zkLMG2TIh~y9LHebbStCZVPNTIdGN4VcyyTfNsJhI4gMBlppirN4vSRZEWMZik23OGbE6vnap1dyzlFDR5ZMaJzaUpgzjTmXWimkk0dWgYU3p001ovO2c9on-FY9SJbkl0DdLJN6U3j6HxDgzkxP~88hOf9UCB5lY-g-OkvZA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
-      rating: '4.5',
-      temperature: '38 C',
-      duration: '8 Days',
-      details: "Mars is the fourth planet from the sun and has a distinct rusty red appearance and two unusual moons.\n\n" +
-      "The Red Planet is a cold, desert world within our solar system. It has a very thin atmosphere, but the dusty, lifeless (as far as we know it) planet is far from dull." +
-      " Phenomenal dust storms can grow so large they engulf the entire planet, temperatures can get so cold that carbon dioxide in the atmosphere condenses directly into snow or frost, and marsquakes — a Mars version of an earthquake — regularly shake things up.\n\n" +
-      "Therefore, it is no surprise that this little red rock continues to intrigue scientists and is one of the most explored bodies in the solar system, according to NASA Science." +
-        "The Red Planet is a cold, desert world within our solar system. It has a very thin atmosphere, but the dusty, lifeless (as far as we know it) planet is far from dull.\n\n",
-    };
-
-    navigation.navigate("SelectedPlanetDetailsPage", {planetData});
-  };
   return (
     <BackgroundTemplate>
       <Text>Open up App.js to start working on your app!</Text>
@@ -62,14 +44,12 @@ export default function Test1({ navigation }) {
         />
         <IconEmergencyAssistance
           source={require("../assets/images/emergencyIcons/UniversalTranslator.png")}
-          onPress={onSubmit}
         />
       </View>
 
       {/* iconNavigationBar can be used to display: house, case, earth, rocket, profile */}
       <IconNavigationBar
         source={require("../assets/images/navigationBar/earth.png")}
-        onPress={onSubmit}
       />
 
       {/* icon planet can be used to display: rating.png, temperature.png, cloud.png */}
