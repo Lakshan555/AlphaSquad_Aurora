@@ -26,7 +26,7 @@ const SelectedPlanetDetailsPage = () => {
   const navigation = useNavigation();
 
   // Access the data passed via props
-  const data = route.params?.planetData;
+  const data = route.params?.data;
 
   return (
     <BackgroundTemplate>

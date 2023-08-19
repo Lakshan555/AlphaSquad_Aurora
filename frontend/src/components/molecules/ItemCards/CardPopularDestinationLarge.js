@@ -3,13 +3,15 @@ import { View, Text, ImageBackground, StyleSheet, TouchableOpacity } from 'react
 import PlanetDetailIconPalette from '../PlanetDetailIconPalette';
 import TextHeading from '../../atoms/texts/TextHeading';
 import TextBody from '../../atoms/texts/TextBody';
+import { useNavigation } from '@react-navigation/native';
 
-const CardPopularDestinationLarge = ({ data, onPress }) => {
+const CardPopularDestinationLarge = ({ data }) => {
 
-  // useEffect = () => {
-  //   console.log('\n\ndataa::', data)
-  // },[]
+  const navigation = useNavigation();
 
+  const onSubmit = () => {
+    navigation.navigate("SelectedPlanetDetailsPage", {data});
+  }
   function getFirstSentence(paragraph) {
     // Find the index of the first dot (full stop)
     const firstDotIndex = paragraph.indexOf('.');
@@ -26,7 +28,7 @@ const CardPopularDestinationLarge = ({ data, onPress }) => {
   }
   
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onSubmit}>
           <ImageBackground source={{uri: data.imageSrc}} style={styles.card}>
           <View style={styles.cardContent}{...styles.overlay }>
         <View style={styles.textContainer}>

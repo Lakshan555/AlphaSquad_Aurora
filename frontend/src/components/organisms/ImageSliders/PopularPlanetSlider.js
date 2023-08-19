@@ -11,7 +11,7 @@ const PopularPlanetSlider = ({ data }) => {
       contentContainerStyle={styles.sliderContainer}
     >
       {data.map((item, index) => (
-        <CardPopularDestinationMedium key={index} imageSrc={item.imageSrc} name={item.name} cost={ item.cost} />
+        <CardPopularDestinationMedium key={index} data={item}/>
       ))}
     </ScrollView>
   );

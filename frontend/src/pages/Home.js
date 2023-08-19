@@ -79,7 +79,7 @@ export default function Home() {
         "The Red Planet is a cold, desert world within our solar system. It has a very thin atmosphere, but the dusty, lifeless (as far as we know it) planet is far from dull.\n\n",
     },
   ];
-  
+
   return (
     <BackgroundTemplate>
         <View style={styles.container}>
@@ -150,7 +150,7 @@ export default function Home() {
                   </View>
                 </View>
                 <View style={styles.sliderContainer}>
-                  <PopularPlanetSlider data={allPlanets} />
+                  <PopularPlanetSlider data={allPlanets}/>
                 </View>
                 <View style={styles.titleOuterContainer}>
                   <View style={styles.commonTitleContainer}>
