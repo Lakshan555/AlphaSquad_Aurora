@@ -4,6 +4,7 @@ import { Image, View } from "react-native";
 import Test1 from "../../../pages/test_page_1";
 import Home from "../../../pages/Home";
 import BookingHistory from "../../../pages/BookingHistory";
+import DestinationsPage from "../../../pages/DestinationsPage";
 
 // import SelectedPlanetDetailsPage from "../pages/SelectedPlanetDetailsPage";
 // import IconNavigationBar from "../components/atoms/icons/IconNavigationBar";
@@ -71,7 +72,7 @@ export default BottomAppBar = () => {
     >
       <Tab.Screen name="home" component={Home} />
       <Tab.Screen name="test2" component={BookingHistory} />
-      <Tab.Screen name="test3" component={Test1} />
+      <Tab.Screen name="test3" component={DestinationsPage} />
       <Tab.Screen name="test4" component={Home} />
       <Tab.Screen name="test5" component={Test1} />
     </Tab.Navigator>
