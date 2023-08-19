@@ -21,7 +21,7 @@ const CardPopularDestinationMedium = ({ data }) => {
                 textAlign={"center"}
                       lineHeight={34}
                       fontWeight={700}
-                  fontSize={26}
+                  // fontSize={26}
                   marginBottom={0}
                   opacity={0.9}
               ></TextHeading>

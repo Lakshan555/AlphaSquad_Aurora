@@ -40,7 +40,7 @@ const CardPopularDestinationLarge = ({ data }) => {
             <TextBody
                 value={getFirstSentence(data.details)}
                 textAlign={"justify"}
-                fontSize={14}
+                fontSize={13}
               fontWeight={400}
               lineHeight={18}
               marginBottom={15}
@@ -55,7 +55,8 @@ const CardPopularDestinationLarge = ({ data }) => {
 
 const styles = StyleSheet.create({
   card: {
-    width: '100%',
+    // width: '100%',
+    width: 327,
     height: 200,
     // marginHorizontal: 15,
     marginBottom: 18,

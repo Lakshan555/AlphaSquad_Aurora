@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     marginRight: 28,
     borderRadius: 22,
     resizeMode: 'cover',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
     cardContent: {
         // backgroundColor: 'rgba(0, 0, 0, 0.5)',

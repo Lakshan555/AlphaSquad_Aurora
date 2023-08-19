@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
   },
   emergencyTitle: {
     alignItems: 'center',
-    marginTop: 2,
+    marginTop: 5,
   },
   titleOuterContainer: {
     marginHorizontal: 32,

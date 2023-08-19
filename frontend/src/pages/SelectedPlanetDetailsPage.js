@@ -87,7 +87,7 @@ const SelectedPlanetDetailsPage = () => {
             <View style={styles.priceText}>
               <TextBody
                 value={"Total Price"}
-                fontSize={18}
+                fontSize={19}
                 fontWeight={600}
                 color={"black"}
               ></TextBody>
@@ -98,7 +98,7 @@ const SelectedPlanetDetailsPage = () => {
                 fontSize={22}
                 fontWeight={700}
                 color={"black"}
-                lineHeight={28}
+                lineHeight={26}
               ></TextBody>
             </View>
           </View>
@@ -190,7 +190,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     backgroundColor: "white",
     paddingHorizontal: 40,
-    paddingVertical: 20,
+    paddingVertical: 18,
     borderTopLeftRadius: 22,
     borderTopRightRadius: 22,
   },
@@ -200,8 +200,11 @@ const styles = StyleSheet.create({
     color: "black",
     // backgroundColor: 'yellow',
     paddingRight: 75,
+    textAlignVertical: 'center'
   },
-  priceText: {},
+  priceText: {
+    paddingTop: 5
+  },
   price: {},
   bookNowBtnCover: {
     backgroundColor: "#310D4E",

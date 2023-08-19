@@ -70,7 +70,7 @@ export default function ShipsPage() {
             </View>
             {/* from list onwards comes below */}
             <View style={styles.secondPartContainer}>
-            <ScrollView>
+            {/* <ScrollView> */}
                 <View style={styles.listContainer}>
                   <FlatList
                       data={allShips}
@@ -83,7 +83,7 @@ export default function ShipsPage() {
                       style={styles.cardList}
                     />
                 </View>
-              </ScrollView>
+              {/* </ScrollView> */}
             </View>
             
           </View>
@@ -103,13 +103,13 @@ const styles = StyleSheet.create({
     //   marginHorizontal: 20,
       display: 'flex',
       flexDirection: 'column',
-      height: '18%',
+      height: '17%',
   },
   topPart: {
     // paddingHorizontal: 22,      
   },
   secondPartContainer: {
-      height: '82%',
+      height: '83%',
     //   maxWidth: '80%'
   },
   appNameContainer: {
@@ -136,10 +136,10 @@ const styles = StyleSheet.create({
   listContainer: {
     // marginHorizontal: 16,
     // marginTop: -15,
-      paddingBottom: 30,
+      paddingBottom: 50,
   },
   cardList: {
     // padding: 15,
-      paddingBottom: 20
+      // paddingBottom: 40
   }
 });

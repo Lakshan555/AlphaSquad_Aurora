@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
     maxHeight: 296,
   },
   listContainer: {
-    marginHorizontal: '5%', // double check
+    marginHorizontal: 25, // double check
   },
   cardList: {
     paddingBottom: 50

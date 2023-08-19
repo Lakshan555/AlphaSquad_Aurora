@@ -54,14 +54,14 @@ const SelectedShipDetailsPage = () => {
               ></TextHeading>
               {data.shipTypes.map((shipType, index) => (
                 <>
-                <TextBody
+                <TextHeading
                 value = {`${index+1}. ${shipType}`}
                 key={index}
                 textAlign={"left"}
                 fontSize={14}
                     fontWeight={600}
                     lineHeight={35}
-                ></TextBody>
+                ></TextHeading>
                 <TextBody
                 value={"Type: Basic Passenger Shuttle\n"+
                 "Features: Compact cabins, standard amenities, communal observation deck.\n"+
@@ -83,9 +83,10 @@ const SelectedShipDetailsPage = () => {
             <View style={styles.priceText}>
               <TextBody
                 value={"Total Price"}
-                fontSize={18}
+                fontSize={19}
                 fontWeight={600}
                 color={"black"}
+                lineHeight={25}
               ></TextBody>
             </View>
             <View style={styles.price}>
@@ -94,7 +95,7 @@ const SelectedShipDetailsPage = () => {
                 fontSize={22}
                 fontWeight={700}
                 color={"black"}
-                lineHeight={28}
+                lineHeight={26}
               ></TextBody>
             </View>
           </View>
@@ -198,7 +199,9 @@ const styles = StyleSheet.create({
     // backgroundColor: 'yellow',
     paddingRight: 75,
   },
-  priceText: {},
+  priceText: {
+    paddingTop: 5,
+  },
   price: {},
   bookNowBtnCover: {
     backgroundColor: "#310D4E",

@@ -1,8 +1,18 @@
-import React from "react";
-import { Text } from "react-native";
+import React, { useState } from "react";
+import { Text, View } from "react-native";
 import { StyleSheet } from "react-native";
+import { useFonts } from 'expo-font';
 
+// use this for texts which are below 400 font weight
 export default function TextBody({ value, fontSize, lineHeight, fontWeight, textAlign, marginBottom, color, right, opacity}) {
+  
+  const [loaded] = useFonts({
+    Jost: require('../../../assets/fonts/Jost-Regular.ttf'),
+  });
+
+  if (!loaded) {
+    return null;
+  }
   
   const customStyles = {
     ...styles.TextSmall,
@@ -16,7 +26,11 @@ export default function TextBody({ value, fontSize, lineHeight, fontWeight, text
       opacity: opacity || styles.TextSmall.opacity,
   };
 
-  return <Text style={customStyles}>{value}</Text>;
+  return (
+    <View>
+        <Text style={{...customStyles, fontFamily: 'Jost'}}>{value}</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -30,5 +44,6 @@ const styles = StyleSheet.create({
     marginBottom: 0,
     marginRight: 0,
     opacity: 1,
+    fontFamily: 'Roboto'
   },
 });
