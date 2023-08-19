@@ -2,7 +2,7 @@ import React from "react";
 import { Text } from "react-native";
 import { StyleSheet } from "react-native";
 
-export default function TextHeading({ value, fontSize, lineHeight, fontWeight, textAlign, marginBottom,  opacity}) {
+export default function TextHeading({ value, fontSize, lineHeight, fontWeight, textAlign, marginBottom, color, opacity}) {
   
   const customStyles = {
     ...styles.Heading,
@@ -11,6 +11,7 @@ export default function TextHeading({ value, fontSize, lineHeight, fontWeight, t
     fontWeight: fontWeight || styles.Heading.fontWeight,
     textAlign: textAlign || styles.Heading.textAlign, 
     marginBottom: marginBottom || styles.Heading.marginBottom,
+    color: color || styles.Heading.color,
     opacity: opacity || styles.Heading.opacity,
   };
 
