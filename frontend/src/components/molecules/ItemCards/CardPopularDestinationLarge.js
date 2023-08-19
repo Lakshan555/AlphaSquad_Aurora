@@ -4,7 +4,7 @@ import PlanetDetailIconPalette from '../PlanetDetailIconPalette';
 import TextHeading from '../../atoms/texts/TextHeading';
 import TextBody from '../../atoms/texts/TextBody';
 
-const CardPopularDestinationLarge = ({ name, data, imageSrc }) => {
+const CardPopularDestinationLarge = ({ name, cost, imageSrc }) => {
   return (
     <ImageBackground source={require('../../../assets/images/mars2.jpeg')} style={styles.card}>
           <View style={styles.cardContent}{...styles.overlay }>
