@@ -18,7 +18,11 @@ export default function Test1({ navigation }) {
   const options = ['Space Station : Ohio - Earth', 'Mercury', 'Jupiter'];
 
   // track the user selected dropdown value
-  const handleOptionSelect = (option) => {
+  const handleFromOption = (option) => {
+    console.log('selected From value: ', option)
+  };
+
+  const handleToOption = (option) => {
     console.log('selected From value: ', option)
   };
 
@@ -26,62 +30,24 @@ export default function Test1({ navigation }) {
     <BackgroundTemplate>
     
       {/* custom dropdown */}
+      {/* title should be one of these values: 'From', 'To', 'Ship', 'Class' */}
       <View style={styles.container}>
-        <CustomDropdown options={options} onSelect={handleOptionSelect}/>
-      </View>
-      
-      <MaterialCommunityIcons
-        name="alarm-light"
-        size={24}
-        color="red"
-        onPress={() => {
-          console.log("button pressed");
-        }}
-      />
-      <IconBackwardArrow onPress={() => console.log("Button pressed")} />
-      <StatusBar style="auto" />
-
-      {/* iconProfileData can be used to display: achievement, payment, privacy */}
-      <IconProfileData
-        source={require("../assets/images/profileIcons/payment.png")}
-      />
-
-      <View style={styles.content}>
-        <IconEmergencyAssistance
-          source={require("../assets/images/emergencyIcons/emProtocol.png")}
-        />
-        <IconEmergencyAssistance
-          source={require("../assets/images/emergencyIcons/DistressBeacon.png")}
-        />
-        <IconEmergencyAssistance
-          source={require("../assets/images/emergencyIcons/TechnicalSupport.png")}
-        />
-        <IconEmergencyAssistance
-          source={require("../assets/images/emergencyIcons/UniversalTranslator.png")}
-        />
+        <CustomDropdown title={'From'} options={options} onSelect={handleFromOption}/>
       </View>
 
-      {/* iconNavigationBar can be used to display: house, case, earth, rocket, profile */}
-      <IconNavigationBar
-        source={require("../assets/images/navigationBar/earth.png")}
-      />
-
-      {/* icon planet can be used to display: rating.png, temperature.png, cloud.png */}
-      <View style={styles.content}>
-        <IconPlanet source={require("../assets/images/planetIcons/star.png")} />
-        <IconPlanet
-          source={require("../assets/images/planetIcons/cloud.png")}
-        />
-        <IconPlanet
-          source={require("../assets/images/planetIcons/rocketRed.png")}
-        />
+      <View style={styles.container}>
+        <CustomDropdown title={'To'} options={options} onSelect={handleFromOption}/>
       </View>
 
-      {/* custom texts */}
-      <TextHeading value={"dkdkd dkdkd"}></TextHeading>
-      <TextBody value={"dkdkd dkdkd"}></TextBody>
+      <View style={styles.container}>
+        <CustomDropdown title={'Ship'} options={options} onSelect={handleFromOption}/>
+      </View>
 
-      <CardTripsHistoryItem />
+      <View style={styles.container}>
+        <CustomDropdown title={'Class'} options={options} onSelect={handleFromOption}/>
+      </View>
+
+
     </BackgroundTemplate>
   );
 }

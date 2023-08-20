@@ -1,11 +1,24 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import TextBody from '../../atoms/texts/TextBody';
+import dl from '../../../assets/images/booking/iconFrom.png'
 
 
-const CustomDropdown = ({ options, onSelect }) => {
+const CustomDropdown = ({ title, options, onSelect }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
+
+    let imageSrc;
+
+    if (title === 'From') {
+        imageSrc = require('../../../assets/images/booking/iconFrom.png')
+    } else if (title === 'To') {
+        imageSrc = require('../../../assets/images/booking/iconTo.png')
+    } else if (title === 'Ship') {
+        imageSrc = require('../../../assets/images/booking/iconShip.png')
+    } else if (title === 'Class') {
+        imageSrc = require('../../../assets/images/booking/iconClass.png')
+    }
   
     const toggleDropdown = () => {
       setIsOpen(!isOpen);
@@ -22,10 +35,10 @@ const CustomDropdown = ({ options, onSelect }) => {
       <View style={styles.container}>
         <TouchableOpacity onPress={toggleDropdown} style={styles.dropdownButton}>
                 <View style={styles.iconContainer}>
-                    <Image source={require('../../../assets/images/booking/fromIcon.png')} style={styles.icon}></Image>
+                    <Image source={imageSrc} style={styles.icon}></Image>
                 </View>
                 <View style={styles.textContainer}>
-                    <TextBody value={'From'} fontSize={14}></TextBody>
+                    <TextBody value={title} fontSize={14}></TextBody>
                     <Text style={styles.selectedOptionText}>
                         {selectedOption ? selectedOption : 'Select an option'}
                     </Text>
@@ -51,12 +64,12 @@ const CustomDropdown = ({ options, onSelect }) => {
   
   const styles = StyleSheet.create({
     container: {
+    },
+      dropdownButton: {
         position: 'relative',
         width: 320, 
         height: 65,
-        marginBottom: 20
-    },
-    dropdownButton: {
+          marginBottom: 20,
       flexDirection: 'row',
       alignItems: 'center',
       borderRadius: 18,
@@ -65,20 +78,25 @@ const CustomDropdown = ({ options, onSelect }) => {
       overflow: 'hidden',
         // backgroundColor: 'linear-gradient(138deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%)',
       backgroundColor: 'linear-gradient(146deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%)',
-      paddingHorizontal: 20,
+        paddingHorizontal: 20,
       },
       iconContainer: {
           paddingVertical: 10,
-          paddingRight: 20,
+        //   position: 'absolute',
     },
-    icon: {
+      icon: {
+          minWidth: 30,
+          maxWidth: 30,
+          maxHeight: 40,
+          resizeMode: 'contain'
       },
       textContainer: {
           display: 'flex',
           flexDirection: 'column',
           textAlignVertical: 'center',
-          paddingVertical: 10,
-          paddingTop: 13,
+          paddingVertical: 0,
+          paddingTop: 11,
+          marginLeft: 20,
     },
     selectedOptionText: {
         flex: 1,
