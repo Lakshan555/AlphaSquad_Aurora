@@ -7,7 +7,6 @@ import BoringPass from "../components/molecules/BoringPass";
 import { useRoute } from "@react-navigation/native";
 
 export default SelectedOnBoardDetails = ({ navigation }) => {
-
   const route = useRoute();
   const selectedFrom = route.params.selectedFrom; // Get the selected "From" data
   const selectedTo = route.params.selectedTo; // Get the selected "To" data
@@ -45,8 +44,7 @@ export default SelectedOnBoardDetails = ({ navigation }) => {
                   ship={selectedShip}
                   classType={selectedClass}
                   passengers={1}
-                  total={"$ 25000.00"}
-                 
+                  total={"$ 42000.00"}
                 />
                 <View style={styles.barcode}>
                   <Image

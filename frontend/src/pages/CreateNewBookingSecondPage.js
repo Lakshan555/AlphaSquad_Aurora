@@ -15,7 +15,7 @@ export default CreateNewBookingSecondPage = ({ navigation }) => {
   const selectedDeparture = route.params.selectedDeparture; // Get the selected "Departure" data
   const selectedReturn = route.params.selectedReturn; // Get the selected "Return" data
 
-  const total = "25000.00";
+  const total = "42000.00";
   const options = ["USS - Enterprise - Federation", "Mercury", "Jupiter"];
 
   //use States

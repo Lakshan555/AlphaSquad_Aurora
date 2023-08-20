@@ -12,12 +12,18 @@ import Home from "./src/pages/Home";
 import BookingHistory from "./src/pages/BookingHistory";
 import TranslationScreen from "./src/pages/UniversalTranslatorScreen";
 import SelectedOnBoardDetails from "./src/pages/SelectedOnBoardDetails";
+import Login from "./src/pages/auth/Login";
 
 const Stack = createNativeStackNavigator();
 
 const MyStack = () => {
   return (
     <Stack.Navigator headerMode="none">
+      <Stack.Screen
+        options={{ headerShown: false }}
+        component={Login}
+        name="Login"
+      />
       <Stack.Screen
         name="tabNavigator"
         options={{ headerShown: false }}

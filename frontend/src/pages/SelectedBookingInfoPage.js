@@ -79,7 +79,7 @@ export default SelectedBookingInfoPage = ({ navigation }) => {
                   ship={selectedShip}
                   classType={selectedClass}
                   passengers={1}
-                  total={"$ 25000.00"}
+                  total={"$ 42000.00"}
                   backImage={summaryCard}
                 />
               </View>
