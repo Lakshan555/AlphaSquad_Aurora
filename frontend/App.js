@@ -13,6 +13,7 @@ import BookingHistory from "./src/pages/BookingHistory";
 import TranslationScreen from "./src/pages/UniversalTranslatorScreen";
 import SelectedOnBoardDetails from "./src/pages/SelectedOnBoardDetails";
 import Login from "./src/pages/auth/Login";
+import UpcomingTrips from "./src/pages/UpcomingTrips";
 
 const Stack = createNativeStackNavigator();
 
@@ -73,6 +74,11 @@ const MyStack = () => {
         options={{ headerShown: false }}
         component={TranslationScreen}
         name="TranslationScreen"
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        component={UpcomingTrips}
+        name="UpcomingTrips"
       />
     </Stack.Navigator>
   );

@@ -58,6 +58,13 @@ export default BookingHistory = ({ navigation }) => {
     navigation.navigate("CreateNewBookingPage");
   };
 
+  const onPreviousTripsHandler = () =>{
+    
+  }
+  const upComingTripsHandler = () =>{
+    navigation.navigate("UpcomingTrips");
+  }
+
   return (
     <BackgroundTemplate
       justifyContent="flex-start"
@@ -74,48 +81,52 @@ export default BookingHistory = ({ navigation }) => {
         </View>
         {/* tripSection */}
         <View style={styles.tripSection}>
-          <ImageBackground
-            style={styles.previousTrips}
-            source={require("../assets/images/booking/previousTrips.png")}
-          >
-            <View style={styles.previousTripsCountTitle}>
-              <TextHeading
-                value={"Previous Trips "}
-                fontSize={16}
-                color={"black"}
-                fontWeight={400}
-              />
-            </View>
-            <View style={styles.previousTripsCount}>
-              <TextHeading
-                value={"10"}
-                fontSize={38}
-                color={"black"}
-                fontWeight={700}
-              />
-            </View>
-          </ImageBackground>
-          <ImageBackground
-            style={styles.upcomingTrips}
-            source={require("../assets/images/booking/upcomingTrips.png")}
-          >
-            <View style={styles.previousTripsCountTitle}>
-              <TextHeading
-                value={"Upcoming Trips"}
-                fontSize={16}
-                color={"white"}
-                fontWeight={400}
-              />
-            </View>
-            <View style={styles.previousTripsCount}>
-              <TextHeading
-                value={"10"}
-                fontSize={38}
-                color={"white"}
-                fontWeight={700}
-              />
-            </View>
-          </ImageBackground>
+          <TouchableOpacity onPress={onPreviousTripsHandler}>
+            <ImageBackground
+              style={styles.previousTrips}
+              source={require("../assets/images/booking/previousTrips.png")}
+            >
+              <View style={styles.previousTripsCountTitle}>
+                <TextHeading
+                  value={"Previous Trips "}
+                  fontSize={16}
+                  color={"black"}
+                  fontWeight={400}
+                />
+              </View>
+              <View style={styles.previousTripsCount}>
+                <TextHeading
+                  value={"10"}
+                  fontSize={38}
+                  color={"black"}
+                  fontWeight={700}
+                />
+              </View>
+            </ImageBackground>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={upComingTripsHandler}>
+            <ImageBackground
+              style={styles.upcomingTrips}
+              source={require("../assets/images/booking/upcomingTrips.png")}
+            >
+              <View style={styles.previousTripsCountTitle}>
+                <TextHeading
+                  value={"Upcoming Trips"}
+                  fontSize={16}
+                  color={"white"}
+                  fontWeight={400}
+                />
+              </View>
+              <View style={styles.previousTripsCount}>
+                <TextHeading
+                  value={"10"}
+                  fontSize={38}
+                  color={"white"}
+                  fontWeight={700}
+                />
+              </View>
+            </ImageBackground>
+          </TouchableOpacity>  
         </View>
         {/* Previous Trips History */}
         <View style={styles.tripHistory}>
@@ -147,10 +158,19 @@ export default BookingHistory = ({ navigation }) => {
               )}
             />
 
-            <View style={{marginTop: 5, marginLeft: 25}}>
-              <TouchableOpacity><TextHeading value={'View all'} fontSize={14} lineHeight={24} fontWeight={600} color={'white'} textAlign={'left'}></TextHeading></TouchableOpacity>
+            <View style={{ marginTop: 5, marginLeft: 25 }}>
+              <TouchableOpacity>
+                <TextHeading
+                  value={"View all"}
+                  fontSize={14}
+                  lineHeight={24}
+                  fontWeight={600}
+                  color={"white"}
+                  textAlign={"left"}
+                ></TextHeading>
+              </TouchableOpacity>
             </View>
-            <View style={{marginLeft: -20, marginTop: 5}}>
+            <View style={{ marginLeft: -20, marginTop: 5 }}>
               <ButtonBookNow ButtonName={"Book Now"} onPress={onPress} />
             </View>
           </View>

@@ -82,6 +82,8 @@ const styles = StyleSheet.create({
     backgroundColor:
       "linear-gradient(138deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%)", // Use backgroundColor instead of background
     padding: 13,
+    borderColor: 'gray',
+    overflow: 'hidden', // Clip the content to the border radius
     width: 340,
     margin: 15,
     marginTop: 10,
