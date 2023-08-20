@@ -101,6 +101,12 @@ const TranslationScreen = () => {
         </View>
 
         <View style={styles.secondPartContainer}>
+          <TextHeading
+            value={"Preferred language"}
+            fontSize={16}
+            lineHeight={39}
+            fontWeight={600}
+          ></TextHeading>
           <View style={styles.input}>
             <TextInput
               placeholder="Enter text here"
@@ -112,7 +118,14 @@ const TranslationScreen = () => {
               // style={{ color: "white", fontSize: 18 }}
             />
           </View>
-
+          <View>
+            <TextHeading
+              value={"Language X"}
+              fontSize={16}
+              lineHeight={39}
+              fontWeight={600}
+            ></TextHeading>
+          </View>
           <View style={styles.outputText}>
             {translatedText !== "" && (
               <TextBody
@@ -177,12 +190,12 @@ const styles = StyleSheet.create({
   coverterBtnContainer: {},
   outputText: {
     borderRadius: 4,
-    right:5,
-    width:340,
-    padding:20,
-    height:60,
+    right: 5,
+    width: 340,
+    padding: 20,
+    height: 60,
     backgroundColor:
-    "linear-gradient(138deg, rgba(255, 85, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%)", // Use backgroundColor instead of background
+      "linear-gradient(138deg, rgba(255, 85, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%)", // Use backgroundColor instead of background
   },
   buttonSection: {
     display: "flex",
@@ -199,7 +212,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     right: 20,
     backgroundColor:
-      "linear-gradient(138deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%)", 
+      "linear-gradient(138deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%)",
     padding: 13,
     borderColor: "gray",
     overflow: "hidden", // Clip the content to the border radius
