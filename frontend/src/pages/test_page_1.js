@@ -10,12 +10,26 @@ import CardTripsHistoryItem from "../components/molecules/ItemCards/CardTripsHis
 import TextBody from "../components/atoms/texts/TextBody";
 import TextHeading from "../components/atoms/texts/TextHeading";
 import IconEmergencyAssistance from "../components/atoms/icons/IconEmergencyAssistance";
+import CustomDropdown from "../components/molecules/ItemCards/CardBookingCustomDropdown";
+import { useState } from "react";
 
 export default function Test1({ navigation }) {
 
+  const options = ['Space Station : Ohio - Earth', 'Mercury', 'Jupiter'];
+
+  // track the user selected dropdown value
+  const handleOptionSelect = (option) => {
+    console.log('selected From value: ', option)
+  };
+
   return (
     <BackgroundTemplate>
-      <Text>Open up App.js to start working on your app!</Text>
+    
+      {/* custom dropdown */}
+      <View style={styles.container}>
+        <CustomDropdown options={options} onSelect={handleOptionSelect}/>
+      </View>
+      
       <MaterialCommunityIcons
         name="alarm-light"
         size={24}
