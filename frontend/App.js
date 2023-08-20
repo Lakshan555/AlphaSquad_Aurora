@@ -8,9 +8,10 @@ import CreateNewBookingPage from "./src/pages/CreateNewBookingPage";
 import CreateNewBookingSecondPage from "./src/pages/CreateNewBookingSecondPage";
 import SelectedShipDetailsPage from "./src/pages/SelectedShipDetailsPage";
 import SelectedBookingInfoPage from "./src/pages/SelectedBookingInfoPage";
-import SelectedOnBoardDetails from "./src/pages/SelectedOnBoardDetails";
 import Home from "./src/pages/Home";
 import BookingHistory from "./src/pages/BookingHistory";
+import TranslationScreen from "./src/pages/UniversalTranslatorScreen";
+import SelectedOnBoardDetails from "./src/pages/SelectedOnBoardDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -57,10 +58,15 @@ const MyStack = () => {
         component={SelectedBookingInfoPage}
         name="SelectedBookingInfoPage"
       />
-      <Stack.Screen
+        <Stack.Screen
         options={{ headerShown: false }}
         component={SelectedOnBoardDetails}
         name="SelectedOnBoardDetails"
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        component={TranslationScreen}
+        name="TranslationScreen"
       />
     </Stack.Navigator>
   );

@@ -17,6 +17,7 @@ import IconEmergencyAssistance from "../components/atoms/icons/IconEmergencyAssi
 import TextHeading from "../components/atoms/texts/TextHeading";
 import CardPopularDestinationLarge from "../components/molecules/ItemCards/CardPopularDestinationLarge";
 import DistressBeaconPopup from "../components/molecules/DistressBeaconPopup";
+import { useNavigation } from '@react-navigation/native';
 
 export default function Home() {
   // const [data, setData] = useState([]);
@@ -31,6 +32,12 @@ export default function Home() {
   //     });
   // }, [apiUrl]);
 
+  const navigation = useNavigation();
+
+  const handleUniversalTranslatorButton = () => {
+    navigation.navigate("TranslationScreen");
+  }
+  
   const allPlanets = [
     {
       id: 1,
@@ -191,9 +198,10 @@ export default function Home() {
                   style={[styles.emergencyItemContainer, { marginRight: "4%" }]}
                 >
                   <View style={styles.emergencyIcon}>
-                    <IconEmergencyAssistance
+                      <IconEmergencyAssistance
                       source={require("../assets/images/emergencyIcons/UniversalTranslator.png")}
-                    />
+                      onPress={handleUniversalTranslatorButton}
+                      />
                   </View>
                   <View style={styles.emergencyTitle}>
                     <TextBody
