@@ -25,6 +25,7 @@ export default function TextHeading({ value, fontSize, lineHeight, fontWeight, t
     marginBottom: marginBottom || styles.Heading.marginBottom,
     color: color || styles.Heading.color,
     opacity: opacity || styles.Heading.opacity,
+    color: color || styles.Heading.color
   };
 
   return (
