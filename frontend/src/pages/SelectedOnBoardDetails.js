@@ -17,7 +17,7 @@ export default SelectedOnBoardDetails = ({ navigation }) => {
   const selectedClass = route.params.selectedClass; // Get the selected class data
 
   const onPress = () => {
-    navigation.navigate("CreateNewBookingPage");
+    navigation.navigate("tabNavigator");
   };
 
   return (

@@ -28,6 +28,12 @@ const SelectedPlanetDetailsPage = () => {
   // Access the data passed via props
   const data = route.params?.data;
 
+  const onPress = () => {
+    navigation.navigate("CreateNewBookingPage");
+  };
+
+  
+
   return (
     <BackgroundTemplate>
       <View style={[styles.planetDetailsPageContainer, {}]}>
@@ -103,7 +109,7 @@ const SelectedPlanetDetailsPage = () => {
             </View>
           </View>
           <View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={onPress} >
               <View style={styles.bookNowBtnCover}>
                 <TextBody
                   style={styles.bookNowBtn}

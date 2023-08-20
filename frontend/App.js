@@ -9,6 +9,9 @@ import CreateNewBookingSecondPage from "./src/pages/CreateNewBookingSecondPage";
 import SelectedShipDetailsPage from "./src/pages/SelectedShipDetailsPage";
 import SelectedBookingInfoPage from "./src/pages/SelectedBookingInfoPage";
 import SelectedOnBoardDetails from "./src/pages/SelectedOnBoardDetails";
+import Home from "./src/pages/Home";
+import BookingHistory from "./src/pages/BookingHistory";
+
 const Stack = createNativeStackNavigator();
 
 const MyStack = () => {
@@ -18,6 +21,16 @@ const MyStack = () => {
         name="tabNavigator"
         options={{ headerShown: false }}
         component={Tabs}
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        component={Home}
+        name="Home"
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        component={BookingHistory}
+        name="BookingHistory"
       />
       <Stack.Screen
         options={{ headerShown: false }}
