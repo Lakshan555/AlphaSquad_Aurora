@@ -1,24 +1,27 @@
 import {
-  ImageBackground,
   ScrollView,
   StyleSheet,
-  TouchableOpacity,
   View,
 } from "react-native";
 import ProfileDetail from "../components/molecules/profileDetail";
 import BackgroundTemplate from "../components/templates/BackgroundTemplate";
 import TextHeading from "../components/atoms/texts/TextHeading";
 import Progress from "../components/atoms/progress/progress";
-import CardShip from "../components/molecules/ItemCards/CardBookingDropDown";
-
-import planeCard from "../assets/images/booking/planeCard.png";
-import destinationCard from "../assets/images/booking/destinationCard.png";
-
 import ButtonBookNow from "../components/atoms/buttons/ButtonBookNow";
+import CustomDropdown from "../components/molecules/ItemCards/CardBookingCustomDropdown";
 
 export default CreateNewBookingSecondPage = ({ navigation }) => {
   const onPress = () => {
-    navigation.navigate("CreateNewBookingPage");
+    navigation.navigate("SelectedBookingInfoPage");
+  };
+
+  const total = "25000.00";
+
+  const options = ["USS - Enterprise - Federation", "Mercury", "Jupiter"];
+
+  // track the user selected dropdown value
+  const handleOptionSelect = (option) => {
+    console.log("selected From value: ", option);
   };
 
   return (
@@ -53,20 +56,30 @@ export default CreateNewBookingSecondPage = ({ navigation }) => {
           <ScrollView>
             <View style={styles.scrollView}>
               <View>
-                <CardShip
-                  cardImage={planeCard}
-                  state={"From"}
-                  location={"Test"}
+                <CustomDropdown
+                  options={options}
+                  onSelect={handleOptionSelect}
+                  title={"Ship"}
+                  selectOption={"option"}
+                  
                 />
               </View>
               <View>
-                <CardShip
-                  cardImage={destinationCard}
-                  state={"To"}
-                  location={"Test"}
+                <CustomDropdown
+                  options={options}
+                  onSelect={handleOptionSelect}
+                  title={"Class"}
+                  selectOption={"option"}
+              
                 />
               </View>
-
+              <View style={styles.total}>
+                <TextHeading
+                  value={`Total : $ ${total}`}
+                  fontSize={28}
+                  fontWeight={400}
+                />
+              </View>
               <View style={styles.nextButton}>
                 <ButtonBookNow ButtonName={"Next"} onPress={onPress} />
               </View>
@@ -112,5 +125,8 @@ const styles = StyleSheet.create({
   },
   cardSection: {
     paddingTop: 30,
+  },
+  total: {
+    paddingLeft: 7,
   },
 });

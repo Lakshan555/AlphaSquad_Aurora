@@ -9,17 +9,23 @@ import ProfileDetail from "../components/molecules/profileDetail";
 import BackgroundTemplate from "../components/templates/BackgroundTemplate";
 import TextHeading from "../components/atoms/texts/TextHeading";
 import Progress from "../components/atoms/progress/progress";
-import planeCard from "../assets/images/booking/planeCard.png";
-import destinationCard from "../assets/images/booking/destinationCard.png";
-import dateCard from "../assets/images/booking/dateCard.png";
 import ButtonBookNow from "../components/atoms/buttons/ButtonBookNow";
-import CardBookingDropDown from "../components/molecules/ItemCards/CardBookingDropDown";
-import CardBookingDate from "../components/molecules/ItemCards/CardBookingDate";
+import CustomDropdown from "../components/molecules/ItemCards/CardBookingCustomDropdown";
+
 
 export default CreateNewBookingPage = ({ navigation }) => {
   const onPress = () => {
     navigation.navigate("CreateNewBookingSecondPage");
   };
+
+  // track the user selected dropdown value
+  const handleOptionSelect = (option) => {
+    console.log("selected From value: ", option);
+  };
+
+  const options = ["Space Station : Ohio - Earth", "Mercury", "Jupiter"];
+  const dateOptions = ["2200.12.18", "2200.12.19", "2200.12.20"];
+  const returnOptions = ["2201.12.18", "2201.12.19", "2201.12.20"];
 
   return (
     <BackgroundTemplate justifyContent="flex-start" alignItems={"flex-start"}>
@@ -89,31 +95,39 @@ export default CreateNewBookingPage = ({ navigation }) => {
         <ScrollView>
           <View style={styles.scrollView}>
             <View>
-              <CardBookingDropDown
-                cardImage={planeCard}
-                state={"From"}
-                location={"Test"}
+              <CustomDropdown
+                options={options}
+                onSelect={handleOptionSelect}
+                title={"From"}
+                selectOption={"option"}
+               
               />
             </View>
             <View>
-              <CardBookingDropDown
-                cardImage={destinationCard}
-                state={"To"}
-                location={"Test"}
+              <CustomDropdown
+                options={options}
+                onSelect={handleOptionSelect}
+                title={"To"}
+                selectOption={"option"}
+                
               />
             </View>
             <View>
-              <CardBookingDate
-                cardImage={dateCard}
-                state={"To"}
-                location={"Test"}
+              <CustomDropdown
+                options={dateOptions}
+                onSelect={handleOptionSelect}
+                title={"Departure"}
+                selectOption={"date"}
+             
               />
             </View>
             <View>
-              <CardBookingDate
-                cardImage={dateCard}
-                state={"To"}
-                location={"Test"}
+              <CustomDropdown
+                options={returnOptions}
+                onSelect={handleOptionSelect}
+                title={"Return"}
+                selectOption={"date"}
+              
               />
             </View>
             <View style={styles.nextButton}>

@@ -9,7 +9,7 @@ import {
 import TextHeading from "../../atoms/texts/TextHeading";
 import TextBody from "../../atoms/texts/TextBody";
 
-export default function CardBookingDropDown({ cardImage, state, location}) {
+export default function CardBookingDropDown({ cardImage, state, location }) {
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const toggleDropdown = () => {
