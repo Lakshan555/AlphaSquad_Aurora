@@ -7,9 +7,9 @@
 
  ###### Following servers and packages should be installed prior to the application installation
 
-- stable version of the node should be installed 
+- Stable version of the node should be installed 
 - An Emulator or Expo Go app to test the app
-- should have the .env file of the backend project 
+- Should have the .env file of the backend project 
 
 ### To run the Backend
 
@@ -28,7 +28,7 @@
     ```
 7. Open the project folder from a preferred IDE (VS CODE)
 8. Change the PORT, MONGODB_ADMIN_USERNAME, MONGODB_ADMIN_PASSWORD in the .env.example with the correct values and Rename the .env.example file as .env
-9. run using the below command
+9. Run using the below command
     ```
     npm start
     ```
