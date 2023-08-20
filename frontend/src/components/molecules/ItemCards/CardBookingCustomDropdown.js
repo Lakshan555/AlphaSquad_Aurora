@@ -4,7 +4,7 @@ import TextBody from '../../atoms/texts/TextBody';
 import dl from '../../../assets/images/booking/iconFrom.png'
 
 
-const CustomDropdown = ({ title, options, onSelect }) => {
+const CustomDropdown = ({ options, onSelect,path,vectorImg,selectOption,title }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
 
@@ -19,6 +19,9 @@ const CustomDropdown = ({ title, options, onSelect }) => {
     } else if (title === 'Class') {
         imageSrc = require('../../../assets/images/booking/iconClass.png')
     }
+    else if (title === 'Departure' || title === 'Return') {
+      imageSrc = require('../../../assets/images/booking/datevector.png')
+  }
   
     const toggleDropdown = () => {
       setIsOpen(!isOpen);
@@ -38,9 +41,9 @@ const CustomDropdown = ({ title, options, onSelect }) => {
                     <Image source={imageSrc} style={styles.icon}></Image>
                 </View>
                 <View style={styles.textContainer}>
-                    <TextBody value={title} fontSize={14}></TextBody>
+                    <TextBody value={`${title}`} fontSize={14}></TextBody>
                     <Text style={styles.selectedOptionText}>
-                        {selectedOption ? selectedOption : 'Select an option'}
+                        {selectedOption ? selectedOption : `Select an ${selectOption}`}
                     </Text>
                 </View>
         </TouchableOpacity>
@@ -67,12 +70,12 @@ const CustomDropdown = ({ title, options, onSelect }) => {
     },
       dropdownButton: {
         position: 'relative',
-        width: 320, 
+        width: 340, 
         height: 65,
           marginBottom: 20,
       flexDirection: 'row',
       alignItems: 'center',
-      borderRadius: 18,
+      borderRadius: 10,
       borderWidth: 0.5,
       borderColor: 'gray',
       overflow: 'hidden',
