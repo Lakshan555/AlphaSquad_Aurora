@@ -38,7 +38,7 @@ export default BottomAppBar = () => {
         tabBarLabelStyle: {
           fontSize: 14,
         },
-        // tabBarActiveTintColor: "blue",
+        // tabBarActiveTintColor: "white",
         // tabBarInactiveTintColor: "gray",
         tabBarLabel: () => null,
         tabBarIcon: ({ focused }) => {
