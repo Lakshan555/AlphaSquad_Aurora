@@ -7,17 +7,33 @@ import ButtonBookNow from "../components/atoms/buttons/ButtonBookNow";
 import CardBookingSummary from "../components/molecules/ItemCards/CardBookingSummary";
 import CardBookingPaymentDropdown from "../components/molecules/ItemCards/CardBookingPaymentDropdown";
 import summaryCard from "./../assets/images/booking/summarySecondCard.png";
+import { useRoute } from "@react-navigation/native";
 
 export default SelectedBookingInfoPage = ({ navigation }) => {
-  const onPress = () => {
-    navigation.navigate("SelectedOnBoardDetails");
-  };
-
   const options = ["PayPal", "BitCoin", "FaceCoin"];
+
+  const route = useRoute();
+  const selectedFrom = route.params.selectedFrom; // Get the selected "From" data
+  const selectedTo = route.params.selectedTo; // Get the selected "To" data
+  const selectedDeparture = route.params.selectedDeparture; // Get the selected "Departure" data
+  const selectedReturn = route.params.selectedReturn; // Get the selected "Return" data
+  const selectedShip = route.params.selectedShip; // Get the selected ship data
+  const selectedClass = route.params.selectedClass; // Get the selected class data
 
   // track the user selected dropdown value
   const handleOptionSelect = (option) => {
     console.log("selected From value: ", option);
+  };
+
+  const onPress = () => {
+    navigation.navigate("SelectedOnBoardDetails", {
+      selectedFrom: selectedFrom,
+      selectedTo: selectedTo,
+      selectedDeparture: selectedDeparture,
+      selectedReturn: selectedReturn,
+      selectedShip: selectedShip,
+      selectedClass: selectedClass,
+    });
   };
 
   return (
@@ -56,11 +72,14 @@ export default SelectedBookingInfoPage = ({ navigation }) => {
             <View style={styles.scrollView}>
               <View>
                 <CardBookingSummary
-                  tripNo={"item.tripNo"}
-                  distance={"item.distance"}
-                  to={"item.to"}
-                  price={"item.price"}
-                  date={"item.date"}
+                  from={selectedFrom}
+                  to={selectedTo}
+                  departure={selectedDeparture}
+                  returns={selectedReturn}
+                  ship={selectedShip}
+                  classType={selectedClass}
+                  passengers={1}
+                  total={"$ 25000.00"}
                   backImage={summaryCard}
                 />
               </View>

@@ -148,7 +148,7 @@ export default BookingHistory = ({ navigation }) => {
             />
 
             <View style={{marginTop: 5, marginLeft: 25}}>
-              <TouchableOpacity><TextHeading value={'View all'} fontSize={14} lineHeight={24} fontWeight={600} color={'blue'} textAlign={'left'}></TextHeading></TouchableOpacity>
+              <TouchableOpacity><TextHeading value={'View all'} fontSize={14} lineHeight={24} fontWeight={600} color={'white'} textAlign={'left'}></TextHeading></TouchableOpacity>
             </View>
             <View style={{marginLeft: -20, marginTop: 5}}>
               <ButtonBookNow ButtonName={"Book Now"} onPress={onPress} />

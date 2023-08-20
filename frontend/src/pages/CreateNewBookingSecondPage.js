@@ -1,27 +1,46 @@
-import {
-  ScrollView,
-  StyleSheet,
-  View,
-} from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import ProfileDetail from "../components/molecules/profileDetail";
 import BackgroundTemplate from "../components/templates/BackgroundTemplate";
 import TextHeading from "../components/atoms/texts/TextHeading";
 import Progress from "../components/atoms/progress/progress";
 import ButtonBookNow from "../components/atoms/buttons/ButtonBookNow";
 import CustomDropdown from "../components/molecules/ItemCards/CardBookingCustomDropdown";
+import { useState } from "react";
+import { useRoute } from "@react-navigation/native";
 
 export default CreateNewBookingSecondPage = ({ navigation }) => {
-  const onPress = () => {
-    navigation.navigate("SelectedBookingInfoPage");
-  };
+  const route = useRoute();
+  const selectedFrom = route.params.selectedFrom; // Get the selected "From" data
+  const selectedTo = route.params.selectedTo; // Get the selected "To" data
+  const selectedDeparture = route.params.selectedDeparture; // Get the selected "Departure" data
+  const selectedReturn = route.params.selectedReturn; // Get the selected "Return" data
 
   const total = "25000.00";
-
   const options = ["USS - Enterprise - Federation", "Mercury", "Jupiter"];
 
+  //use States
+  const [selectedShip, setSelectedShip] = useState("");
+  const [selectedClass, setSelectedClass] = useState("");
+
   // track the user selected dropdown value
-  const handleOptionSelect = (option) => {
-    console.log("selected From value: ", option);
+
+  const handleOptionSelect = (option, dropdown) => {
+    if (dropdown === "ship") {
+      setSelectedShip(option);
+    } else if (dropdown === "class") {
+      setSelectedClass(option);
+    }
+  };
+
+  const onPress = () => {
+    navigation.navigate("SelectedBookingInfoPage", {
+      selectedShip: selectedShip,
+      selectedClass: selectedClass,
+      selectedFrom: selectedFrom,
+      selectedTo: selectedTo,
+      selectedDeparture: selectedDeparture,
+      selectedReturn: selectedReturn,
+    });
   };
 
   return (
@@ -58,19 +77,17 @@ export default CreateNewBookingSecondPage = ({ navigation }) => {
               <View>
                 <CustomDropdown
                   options={options}
-                  onSelect={handleOptionSelect}
+                  onSelect={(option) => handleOptionSelect(option, "ship")}
                   title={"Ship"}
                   selectOption={"option"}
-                  
                 />
               </View>
               <View>
                 <CustomDropdown
                   options={options}
-                  onSelect={handleOptionSelect}
+                  onSelect={(option) => handleOptionSelect(option, "class")}
                   title={"Class"}
                   selectOption={"option"}
-              
                 />
               </View>
               <View style={styles.total}>

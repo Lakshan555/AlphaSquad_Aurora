@@ -4,8 +4,18 @@ import BackgroundTemplate from "../components/templates/BackgroundTemplate";
 import ButtonBookNow from "../components/atoms/buttons/ButtonBookNow";
 import CardBookingOnBoard from "../components/molecules/ItemCards/CardBookingOnBoard";
 import BoringPass from "../components/molecules/BoringPass";
+import { useRoute } from "@react-navigation/native";
 
 export default SelectedOnBoardDetails = ({ navigation }) => {
+
+  const route = useRoute();
+  const selectedFrom = route.params.selectedFrom; // Get the selected "From" data
+  const selectedTo = route.params.selectedTo; // Get the selected "To" data
+  const selectedDeparture = route.params.selectedDeparture; // Get the selected "Departure" data
+  const selectedReturn = route.params.selectedReturn; // Get the selected "Return" data
+  const selectedShip = route.params.selectedShip; // Get the selected ship data
+  const selectedClass = route.params.selectedClass; // Get the selected class data
+
   const onPress = () => {
     navigation.navigate("CreateNewBookingPage");
   };
@@ -17,7 +27,7 @@ export default SelectedOnBoardDetails = ({ navigation }) => {
           userName="Ravindu Dananjith"
           travelerType="Space Traveler"
         />
-        <View>
+        <View style={styles.boarding}>
           <Text style={styles.title}>Boarding Pass</Text>
         </View>
 
@@ -28,11 +38,15 @@ export default SelectedOnBoardDetails = ({ navigation }) => {
             <View style={styles.scrollView}>
               <View style={styles.backCard}>
                 <CardBookingOnBoard
-                  tripNo={"item.tripNo"}
-                  distance={"item.distance"}
-                  to={"item.to"}
-                  price={"item.price"}
-                  date={"item.date"}
+                  from={selectedFrom}
+                  to={selectedTo}
+                  departure={selectedDeparture}
+                  returns={selectedReturn}
+                  ship={selectedShip}
+                  classType={selectedClass}
+                  passengers={1}
+                  total={"$ 25000.00"}
+                 
                 />
                 <View style={styles.barcode}>
                   <Image
@@ -56,36 +70,9 @@ export default SelectedOnBoardDetails = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  passSection: {
-    display: "flex",
-    flexDirection: "row",
-    paddingTop: 10,
+  boarding: {
+    paddingTop: 30,
   },
-  firstTitle: {
-    color: "white",
-    fontFamily: "Urbanist",
-    fontSize: 18,
-    fontWeight: "500",
-    paddingLeft: 10,
-    paddingTop: 5,
-  },
-  secondTitle: {
-    color: "white",
-    fontFamily: "Urbanist",
-    fontSize: 18,
-    fontWeight: "500",
-    paddingLeft: 25,
-    paddingTop: 5,
-  },
-
-  middleImg: {
-    left: 11,
-    top: 15,
-  },
-  lastImg: {
-    left: 10,
-  },
-
   title: {
     color: "white",
     fontFamily: "Urbanist",
@@ -100,7 +87,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderColor: "white",
-    width: 350,
+    width: 340,
     height: 450,
     backgroundColor:
       "linear-gradient(146deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%)",
@@ -134,6 +121,7 @@ const styles = StyleSheet.create({
     paddingBottom: 200,
   },
   nextButton: {
+    paddingTop: 20,
     right: 12,
   },
   cardSection: {
@@ -146,6 +134,6 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   barcode: {
-    paddingLeft: 10,
+    paddingLeft: 5,
   },
 });

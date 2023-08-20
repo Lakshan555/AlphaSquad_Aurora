@@ -12,6 +12,7 @@ export default function CardBookingSummary({
   ship,
   classType,
   passengers,
+  total,
   backImage,
 }) {
   return (
@@ -75,7 +76,7 @@ export default function CardBookingSummary({
 
           <View style={styles.content}>
             <TextBody
-              value={`Number of Passengers `}
+              value={`Passengers `}
               fontSize={14}
               lineHeight={15}
             ></TextBody>
@@ -92,7 +93,7 @@ export default function CardBookingSummary({
               lineHeight={32}
             ></TextBody>
             <TextBody
-              value={` ${departure}`}
+              value={` ${total}`}
               fontSize={20}
               lineHeight={32}
             ></TextBody>

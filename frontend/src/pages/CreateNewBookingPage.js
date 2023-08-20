@@ -11,21 +11,41 @@ import TextHeading from "../components/atoms/texts/TextHeading";
 import Progress from "../components/atoms/progress/progress";
 import ButtonBookNow from "../components/atoms/buttons/ButtonBookNow";
 import CustomDropdown from "../components/molecules/ItemCards/CardBookingCustomDropdown";
-
+import { useState } from "react";
 
 export default CreateNewBookingPage = ({ navigation }) => {
-  const onPress = () => {
-    navigation.navigate("CreateNewBookingSecondPage");
-  };
-
-  // track the user selected dropdown value
-  const handleOptionSelect = (option) => {
-    console.log("selected From value: ", option);
-  };
-
+ 
+  
   const options = ["Space Station : Ohio - Earth", "Mercury", "Jupiter"];
   const dateOptions = ["2200.12.18", "2200.12.19", "2200.12.20"];
   const returnOptions = ["2201.12.18", "2201.12.19", "2201.12.20"];
+  
+  const [selectedFrom, setSelectedFrom] = useState("");
+  const [selectedTo, setSelectedTo] = useState("");
+  const [selectedDeparture, setSelectedDeparture] = useState("");
+  const [selectedReturn, setSelectedReturn] = useState("");
+  
+  // track the user selected dropdown value
+  const handleOptionSelect = (option, dropdown) => {
+    if (dropdown === "from") {
+      setSelectedFrom(option);
+    } else if (dropdown === "to") {
+      setSelectedTo(option);
+    } else if (dropdown === "departure") {
+      setSelectedDeparture(option);
+    } else if (dropdown === "return") {
+      setSelectedReturn(option);
+    }
+  };
+
+  const onPress = () => {
+    navigation.navigate("CreateNewBookingSecondPage", {
+      selectedFrom: selectedFrom,
+      selectedTo: selectedTo,
+      selectedDeparture: selectedDeparture,
+      selectedReturn: selectedReturn,
+    });
+  };
 
   return (
     <BackgroundTemplate justifyContent="flex-start" alignItems={"flex-start"}>
@@ -97,37 +117,33 @@ export default CreateNewBookingPage = ({ navigation }) => {
             <View>
               <CustomDropdown
                 options={options}
-                onSelect={handleOptionSelect}
+                onSelect={(option) => handleOptionSelect(option, "from")}
                 title={"From"}
                 selectOption={"option"}
-               
               />
             </View>
             <View>
               <CustomDropdown
                 options={options}
-                onSelect={handleOptionSelect}
+                onSelect={(option) => handleOptionSelect(option, "to")}
                 title={"To"}
                 selectOption={"option"}
-                
               />
             </View>
             <View>
               <CustomDropdown
                 options={dateOptions}
-                onSelect={handleOptionSelect}
+                onSelect={(option) => handleOptionSelect(option, "departure")}
                 title={"Departure"}
                 selectOption={"date"}
-             
               />
             </View>
             <View>
               <CustomDropdown
                 options={returnOptions}
-                onSelect={handleOptionSelect}
+                onSelect={(option) => handleOptionSelect(option, "return")}
                 title={"Return"}
                 selectOption={"date"}
-              
               />
             </View>
             <View style={styles.nextButton}>

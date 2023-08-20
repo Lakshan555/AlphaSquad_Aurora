@@ -12,6 +12,7 @@ export default function CardBookingOnBoard({
   ship,
   classType,
   passengers,
+  total,
   backImage,
 }) {
   return (
@@ -90,7 +91,7 @@ export default function CardBookingOnBoard({
           <View style={styles.content}>
             <TextBody value={`Total `} fontSize={20} lineHeight={32}></TextBody>
             <TextBody
-              value={` ${departure}`}
+              value={` ${total}`}
               fontSize={20}
               lineHeight={32}
             ></TextBody>
