@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CreateNewBookingPage from "./src/pages/CreateNewBookingPage";
 import CreateNewBookingSecondPage from "./src/pages/CreateNewBookingSecondPage";
 import SelectedShipDetailsPage from "./src/pages/SelectedShipDetailsPage";
+import SelectedBookingInfoPage from "./src/pages/SelectedBookingInfoPage";
 const Stack = createNativeStackNavigator();
 
 const MyStack = () => {
@@ -36,6 +37,11 @@ const MyStack = () => {
         options={{ headerShown: false }}
         component={CreateNewBookingSecondPage}
         name="CreateNewBookingSecondPage"
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        component={SelectedBookingInfoPage}
+        name="SelectedBookingInfoPage"
       />
     </Stack.Navigator>
   );
