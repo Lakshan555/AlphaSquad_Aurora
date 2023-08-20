@@ -4,7 +4,7 @@ import summaryCard from "./../../../assets/images/booking/summarySecondCard.png"
 import TextHeading from "../../atoms/texts/TextHeading";
 import TextBody from "../../atoms/texts/TextBody";
 
-export default function CardBookingSummary({
+export default function CardBookingOnBoard({
   from,
   to,
   departure,
@@ -17,8 +17,10 @@ export default function CardBookingSummary({
   return (
     <>
       <ImageBackground source={backImage} style={styles.background}>
+        <View style={{paddingLeft:5}}>
+          <TextHeading value={`#000016587864`} fontSize={17} fontWeight={400} />
+        </View>
         <View style={styles.allContent}>
-          
           <View style={styles.content}>
             <TextBody value={`From`} fontSize={14} lineHeight={20}></TextBody>
             <TextBody
@@ -86,11 +88,7 @@ export default function CardBookingSummary({
             ></TextBody>
           </View>
           <View style={styles.content}>
-            <TextBody
-              value={`Total `}
-              fontSize={20}
-              lineHeight={32}
-            ></TextBody>
+            <TextBody value={`Total `} fontSize={20} lineHeight={32}></TextBody>
             <TextBody
               value={` ${departure}`}
               fontSize={20}
@@ -120,6 +118,6 @@ const styles = StyleSheet.create({
     paddingRight: 16,
   },
   allContent: {
-    paddingTop: 10,
+    paddingTop: 0,
   },
 });

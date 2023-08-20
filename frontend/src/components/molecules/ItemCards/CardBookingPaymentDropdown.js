@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import TextBody from "../../atoms/texts/TextBody";
 import dl from "../../../assets/images/booking/iconFrom.png";
 
-const CustomDropdown = ({
+const CardBookingPaymentDropdown = ({
   options,
   onSelect,
   path,
@@ -16,16 +16,8 @@ const CustomDropdown = ({
 
   let imageSrc;
 
-  if (title === "From") {
-    imageSrc = require("../../../assets/images/booking/iconFrom.png");
-  } else if (title === "To") {
-    imageSrc = require("../../../assets/images/booking/iconTo.png");
-  } else if (title === "Ship") {
-    imageSrc = require("../../../assets/images/booking/iconShip.png");
-  } else if (title === "Class") {
-    imageSrc = require("../../../assets/images/booking/iconClass.png");
-  } else if (title === "Departure" || title === "Return") {
-    imageSrc = require("../../../assets/images/booking/datevector.png");
+  if (title === "PayPal") {
+    imageSrc = require("../../../assets/images/booking/paypal.png");
   }
 
   const toggleDropdown = () => {
@@ -46,10 +38,21 @@ const CustomDropdown = ({
           <Image source={imageSrc} style={styles.icon}></Image>
         </View>
         <View style={styles.textContainer}>
-          <TextBody value={`${title}`} fontSize={14}></TextBody>
           <Text style={styles.selectedOptionText}>
-            {selectedOption ? selectedOption : `Select an ${selectOption}`}
+            {selectedOption ? selectedOption : `Select`}
           </Text>
+        </View>
+        <View style={styles.connectedText}>
+          <TextBody
+            value={`Connected`}
+            fontSize={14}
+            fontWeight={700}
+          ></TextBody>
+        </View>
+        <View style={styles.dropDown}>
+          <Image
+            source={require("../../../assets/images/booking/dropDown.png")}
+          ></Image>
         </View>
       </TouchableOpacity>
 
@@ -103,7 +106,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     textAlignVertical: "center",
     paddingVertical: 0,
-    paddingTop: 11,
+    paddingTop: 22,
     marginLeft: 20,
   },
   selectedOptionText: {
@@ -129,6 +132,12 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "lightgray",
   },
+  connectedText: {
+    paddingLeft: 100,
+  },
+  dropDown: {
+    paddingLeft: 10,
+  },
 });
 
-export default CustomDropdown;
+export default CardBookingPaymentDropdown;

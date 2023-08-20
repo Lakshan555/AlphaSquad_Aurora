@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 import {useFonts} from 'expo-font';
 
 // use this for texts which are above 400 font weight
-export default function TextHeading({ value, fontSize, lineHeight, fontWeight, textAlign, marginBottom, color, opacity}) {
+export default function TextHeading({ value, fontSize, lineHeight, fontWeight, textAlign, marginBottom, color, opacity,bottom}) {
   
   // set custom fonts
   const [loaded] = useFonts({
@@ -25,7 +25,7 @@ export default function TextHeading({ value, fontSize, lineHeight, fontWeight, t
     marginBottom: marginBottom || styles.Heading.marginBottom,
     color: color || styles.Heading.color,
     opacity: opacity || styles.Heading.opacity,
-    color: color || styles.Heading.color
+    bottom: bottom || styles.Heading.bottom
   };
 
   return (
@@ -45,5 +45,6 @@ const styles = StyleSheet.create({
     textAlign: "left",
     marginBottom: 0,
     opacity: 1,
+    bottom:0
   },
 });

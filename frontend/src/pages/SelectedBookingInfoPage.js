@@ -1,21 +1,25 @@
-import {
-  ScrollView,
-  StyleSheet,
-  View,
-} from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import ProfileDetail from "../components/molecules/profileDetail";
 import BackgroundTemplate from "../components/templates/BackgroundTemplate";
 import TextHeading from "../components/atoms/texts/TextHeading";
 import Progress from "../components/atoms/progress/progress";
 import ButtonBookNow from "../components/atoms/buttons/ButtonBookNow";
 import CardBookingSummary from "../components/molecules/ItemCards/CardBookingSummary";
+import CardBookingPaymentDropdown from "../components/molecules/ItemCards/CardBookingPaymentDropdown";
+import summaryCard from "./../assets/images/booking/summarySecondCard.png";
 
 export default SelectedBookingInfoPage = ({ navigation }) => {
   const onPress = () => {
-    navigation.navigate("CreateNewBookingPage");
+    navigation.navigate("SelectedOnBoardDetails");
   };
 
-  const total = "25000.00";
+  const options = ["PayPal", "BitCoin", "FaceCoin"];
+
+  // track the user selected dropdown value
+  const handleOptionSelect = (option) => {
+    console.log("selected From value: ", option);
+  };
+
   return (
     <BackgroundTemplate justifyContent="flex-start" alignItems={"flex-start"}>
       <View style={styles.container}>
@@ -44,11 +48,11 @@ export default SelectedBookingInfoPage = ({ navigation }) => {
           <Progress status={"3"} />
         </View>
 
-        <View style={styles.cardSection}>
-          <View>
-            <TextHeading value={`Summery`} fontSize={20} fontWeight={400} />
-          </View>
-          <ScrollView>
+        <ScrollView>
+          <View style={styles.cardSection}>
+            <View>
+              <TextHeading value={`Summery`} fontSize={20} fontWeight={400} />
+            </View>
             <View style={styles.scrollView}>
               <View>
                 <CardBookingSummary
@@ -57,15 +61,30 @@ export default SelectedBookingInfoPage = ({ navigation }) => {
                   to={"item.to"}
                   price={"item.price"}
                   date={"item.date"}
+                  backImage={summaryCard}
                 />
               </View>
-    
+              <View>
+                <TextHeading
+                  value={`Payment Option`}
+                  fontSize={20}
+                  lineHeight={32}
+                />
+              </View>
+              <View style={styles.payment}>
+                <CardBookingPaymentDropdown
+                  options={options}
+                  onSelect={handleOptionSelect}
+                  title={"PayPal"}
+                  selectOption={"option"}
+                />
+              </View>
               <View style={styles.nextButton}>
-                <ButtonBookNow ButtonName={"Next"} onPress={onPress} />
+                <ButtonBookNow ButtonName={"Confirm"} onPress={onPress} />
               </View>
             </View>
-          </ScrollView>
-        </View>
+          </View>
+        </ScrollView>
       </View>
     </BackgroundTemplate>
   );
@@ -108,5 +127,8 @@ const styles = StyleSheet.create({
   },
   total: {
     paddingLeft: 7,
+  },
+  payment: {
+    paddingTop: 10,
   },
 });
