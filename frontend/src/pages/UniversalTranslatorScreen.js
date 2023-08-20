@@ -180,6 +180,7 @@ const styles = StyleSheet.create({
     right:5,
     width:340,
     padding:20,
+    height:60,
     backgroundColor:
     "linear-gradient(138deg, rgba(255, 85, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%)", // Use backgroundColor instead of background
   },
