@@ -5,6 +5,7 @@ import {
   RefreshControl,
   ScrollView,
   StyleSheet,
+  TouchableOpacity,
   View,
 } from "react-native";
 import BackgroundTemplate from "../components/templates/BackgroundTemplate";
@@ -61,7 +62,7 @@ export default BookingHistory = ({ navigation }) => {
     <BackgroundTemplate
       justifyContent="flex-start"
       alignItems={"flex-start"}
-      paddingTop={80}
+      paddingTop={50}
     >
       <View style={styles.container}>
         {/*  profile Details */}
@@ -137,6 +138,7 @@ export default BookingHistory = ({ navigation }) => {
                   <CardTripsHistoryItem
                     tripNo={item.tripNo}
                     distance={item.distance}
+                    from={item.from}
                     to={item.to}
                     price={item.price}
                     date={item.date}
@@ -144,7 +146,11 @@ export default BookingHistory = ({ navigation }) => {
                 </View>
               )}
             />
-            <View>
+
+            <View style={{marginTop: 5, marginLeft: 25}}>
+              <TouchableOpacity><TextHeading value={'View all'} fontSize={14} lineHeight={24} fontWeight={600} color={'blue'} textAlign={'left'}></TextHeading></TouchableOpacity>
+            </View>
+            <View style={{marginLeft: -20, marginTop: 5}}>
               <ButtonBookNow ButtonName={"Book Now"} onPress={onPress} />
             </View>
           </View>
@@ -173,7 +179,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     right: 30,
-    paddingTop: 50,
+    paddingTop: 40,
   },
   //previousTrips
   previousTrips: {

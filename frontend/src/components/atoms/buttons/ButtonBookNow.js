@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default ButtonBookNow = ({ onPress,ButtonName }) => {
   return (
-    <View>
+    <View style={{alignSelf : 'center'}}>
       <TouchableOpacity
         // style={styles.button}
         onPress={onPress}
@@ -27,9 +27,9 @@ const styles = StyleSheet.create({
     // backgroundColor:
     //   linear - gradient("92.44deg, #FFA803 -164.05%, #FFD12E 98.37%"),
     padding: 15,
-    width: 340,
+    width: 330,
     margin: 15,
-    borderRadius: 4,
+    borderRadius: 10,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
