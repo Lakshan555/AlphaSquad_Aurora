@@ -130,7 +130,7 @@ import {
           {/* Previous Trips History */}
           <View style={styles.tripHistory}>
             <TextHeading
-              value={"Upcoming Trips History"}
+              value={"Upcoming Trips "}
               fontSize={20}
               fontWeight={500}
             />
