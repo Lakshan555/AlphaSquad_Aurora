@@ -16,7 +16,8 @@ export default CreateNewBookingSecondPage = ({ navigation }) => {
   const selectedReturn = route.params.selectedReturn; // Get the selected "Return" data
 
   const total = "42000.00";
-  const options = ["USS - Enterprise - Federation", "Mercury", "Jupiter"];
+  const options = ["Community Ships", "Federation", "Galactic Corp.Inc"];
+  const classes = ["Business", "Luxury", "Economy"];
 
   //use States
   const [selectedShip, setSelectedShip] = useState("");
@@ -84,7 +85,7 @@ export default CreateNewBookingSecondPage = ({ navigation }) => {
               </View>
               <View>
                 <CustomDropdown
-                  options={options}
+                  options={classes}
                   onSelect={(option) => handleOptionSelect(option, "class")}
                   title={"Class"}
                   selectOption={"option"}

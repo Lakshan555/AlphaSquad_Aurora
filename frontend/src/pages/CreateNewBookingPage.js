@@ -16,7 +16,7 @@ import { useState } from "react";
 export default CreateNewBookingPage = ({ navigation }) => {
  
   
-  const options = ["Space Station : Ohio - Earth", "Mercury", "Jupiter"];
+  const options = ["Earth", "Mercury", "Jupiter"];
   const dateOptions = ["2200.12.18", "2200.12.19", "2200.12.20"];
   const returnOptions = ["2201.12.18", "2201.12.19", "2201.12.20"];
   

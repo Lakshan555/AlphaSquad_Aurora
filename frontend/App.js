@@ -14,6 +14,12 @@ import TranslationScreen from "./src/pages/UniversalTranslatorScreen";
 import SelectedOnBoardDetails from "./src/pages/SelectedOnBoardDetails";
 import Login from "./src/pages/auth/Login";
 import UpcomingTrips from "./src/pages/UpcomingTrips";
+import { LogBox } from "react-native";
+
+// Ignore log notification by message:
+LogBox.ignoreLogs(["Warning: ..."]);
+// Ignore all log notifications:
+LogBox.ignoreAllLogs();
 
 const Stack = createNativeStackNavigator();
 
@@ -65,7 +71,7 @@ const MyStack = () => {
         component={SelectedBookingInfoPage}
         name="SelectedBookingInfoPage"
       />
-        <Stack.Screen
+      <Stack.Screen
         options={{ headerShown: false }}
         component={SelectedOnBoardDetails}
         name="SelectedOnBoardDetails"
