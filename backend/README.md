@@ -1,1 +1,0 @@
-## AlphaSquad_Aurora Application
