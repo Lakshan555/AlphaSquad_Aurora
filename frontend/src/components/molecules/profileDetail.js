@@ -6,7 +6,7 @@ export default profileDetail = ({ userName, travelerType }) => {
   return (
     <View style={styles.mainDetails}>
       <View style={styles.profileIcon}>
-        <Image source={profileIcon} />
+        <Image source={profileIcon} style={{width: 47, height: 47}} />
       </View>
       <View style={styles.profileDetails}>
         <TextHeading value={userName} fontSize={18} />
