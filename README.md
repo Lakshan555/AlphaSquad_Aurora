@@ -28,7 +28,11 @@
     ```
 7. Open the project folder from a preferred IDE (VS CODE)
 8. Change the PORT, MONGODB_ADMIN_USERNAME, MONGODB_ADMIN_PASSWORD in the .env.example with the correct values and Rename the .env.example file as .env
-9. Run using the below command
+9. Install dependencies
+    ```
+    npm install
+    ```
+11. Run using the below command
     ```
     npm start
     ```
