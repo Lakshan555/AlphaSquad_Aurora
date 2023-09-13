@@ -42,7 +42,7 @@ export default function Home() {
     {
       id: 1,
       name: 'Mars',
-      imageSrc: 'https://s3-alpha-sig.figma.com/img/41f6/6690/a676009d8b4985f74650d8491df37085?Expires=1693180800&Signature=D26gk0rg6EFpZTcmt86nDODb46dBGnNbuNOatV3q8ENUDj3w9~zInWRAvwMH5GHE8fVVHvlzlOQB~lvMMSOKsphkIaDPUHPWU1pIJw-C1nnaP1JTLF7BAu2CKNdWPnq3OnkiackP318TYknkj9HpZl~EiG04EoTPLbNxFymbo2CO2zkLMG2TIh~y9LHebbStCZVPNTIdGN4VcyyTfNsJhI4gMBlppirN4vSRZEWMZik23OGbE6vnap1dyzlFDR5ZMaJzaUpgzjTmXWimkk0dWgYU3p001ovO2c9on-FY9SJbkl0DdLJN6U3j6HxDgzkxP~88hOf9UCB5lY-g-OkvZA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+      imageSrc: 'https://s3-alpha-sig.figma.com/img/41f6/6690/a676009d8b4985f74650d8491df37085?Expires=1695600000&Signature=foQhimtygDYG283zm0hF8f1qF8X4xurVwMxnruIouBqCMd2r5EnI3yOAZFHkkVlPH6kwVgsgHvobsp4B2ChgYhJgA1-cj99sDzoCOGOx~1FEY1pCzrN5fkOHsrhkbSvFfHgPpW3UJf-Lchhd87FZ9zuMrw4OMz6nkVVIN7x37PuwF1Cer8VRVlUwckgNlFdgVtT2qF8ZC-7UtlpgR8Ex02PJbiRXSbONO9V4Re~5yz8gzW1BTZmLSjI~qgYiqSrWp9DUU3dfuv8dJtfxoTFrvfYvz7~dRT90tmxVX~DXVBLu9NCXqVcXuwGLVdiJJUqqJZCSVfoQ8wXt4H1aBUxaRg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
       cost: '$ 4200.00',
       rating: '4',
       temperature: '-80 °C',
@@ -56,7 +56,7 @@ export default function Home() {
     {
       id: 2,
       name: 'Mercury',
-      imageSrc: 'https://s3-alpha-sig.figma.com/img/de51/b8fa/04339ff0abc9268a3f4df02a1887e193?Expires=1693180800&Signature=a-EN0XQmZbYGJLLLoxZxWJkUCruyUZoWQi3EjCSvek7UUb8b6LQRNy-g5MK~3XalDL6ZSfuKU~SU4~f-q1ZBcGjtPozveynfGBW9o1wjBVW49oLgxpJ0hXCN3Clrj5mNztYJxqU6VSbrmFE4TgQRRP2C3rnKH9PDFMQe9T6yIYFYwt-qrCezWPGeCO7zT7-N4yLwdPZ8b9wiO7rZ0DTtYhAqlR3HM3yZZYs07P3-PJv6Mre-sLQNq04a5yONSqGjIx~P~MG7Zmj9Bxgk9FsoT4JowmfR99B1Mo2oC0xBYSgDL8fJS-32A80il~NsLDPNWsQmth3OAE2L4I8V9nQDEw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+      imageSrc: 'https://s3-alpha-sig.figma.com/img/de51/b8fa/04339ff0abc9268a3f4df02a1887e193?Expires=1695600000&Signature=l3161nPnhDPLMvL7ylekG-09SwSc8GWQVAV3rMbPC6hZOtiYK4GMyNhBd65dbnoy7N84xhQZm8Gu0WiM35dzms72tRu3dQuNHze7mnojh6bMjM2Pyc~JniWT3cTrTQY2lLTItEUUcCbxJiFECLiX37~lSJGFiL1aJg6jix1hl3AYOBlGOs7YAvnNvpeabVGLZjKZDc4UiYfLoShceMNTRU3xClIeXnRckTjopEguAtqQw7OO0oBB~uVbXhKrCzzkDEkw1JZqGR9QmoNYccV3oWIslkxVDfmXiwRxYQa7oahMrds2-yu9I7QuVzmZV1Ih0noi7ce0g~y9xMYFRZDktg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
       cost: '$ 7000.00',
       rating: '4.5',
       temperature: '430 °C',
@@ -70,7 +70,7 @@ export default function Home() {
     {
       id: 3,
       name: 'Venus',
-      imageSrc: 'https://s3-alpha-sig.figma.com/img/3260/6ea4/cb66b8d5c3420c01336925eef080adc0?Expires=1693180800&Signature=aJvqsAA4Raav40xYpR9TX~witbuBD2w7ppGL6epXmpuqG8KunvNTudP4EKZTFo9r34NcQTvv~ZVnXxu9Pyzw114A4WlRrEWFYVzpELM8m7vIXOIpioYiXSNcU1zZfOqNnmbc27tJQeK86UnXIubuzgxN~eaodXLWz~h6KnRHa4sal9g7oXeRV4rYC8N~H77UkzXzEsb6OoBY5sAOHntjtSY47IfNj1U4mt7fInJUrpdyDtlXysd0tNrsRiH9AHqsO6Nr9mXYYf~93l8sNPiMhiklqBJsqK8us4BopgUB4AleBcssXWeLi3TKWLZy3NB2ZzFYXk7-Yz6iF0Ki8cjgzw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+      imageSrc: 'https://s3-alpha-sig.figma.com/img/3260/6ea4/cb66b8d5c3420c01336925eef080adc0?Expires=1695600000&Signature=V5x63JEp69CWeO-7sFxVH0PtnxflZYLvmGCTdlN-ZXV-UxzhvW4lD7elfcHKuHBYKmcoUbHEYVfGrKxWKzE85Vz3BW7OLEn-o5qRGBiX9WYkeUotiVEcdfvjgiZygSFPw0qTXtlko0BssOWpsKGqPvQ4GwYn-OZSTTa69RnPkiCDLp44Tz8s8UUEa2XBKUnmADZWxPXFiJUGxPfv7Qhcw29iMJl8Buz7ZtYrX~6CeHMG0CW6sgvxvNOkKkXvv0Ha4NImHzJrMBj9eui57kHX01QWa26irZwg4TBRa~xMhHeZObLoLbGWZn~uWMJvhYcfrae1Rd12QgMS1qkoUniAag__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
       cost: '$ 4200.00',
       rating: '4.7',
       temperature: '470 °C',
@@ -83,7 +83,7 @@ export default function Home() {
     {
       id: 4,
       name: 'Earth',
-      imageSrc: 'https://s3-alpha-sig.figma.com/img/e37b/f7a0/61839add0eaa454eadb0bc28afde8272?Expires=1693180800&Signature=Jp5Y7nkmccYKVhhgnlOiVxTUuBVbqCmndVnYE2LXHvY-wbP3oFm8JKIXBj63vu1bFIlmsb~jYr8gYVIevbv1iaE4DiXCvo5pZb8KLqCZ9UFU2aLvsZrJepsBGEs-0KuIQcdc85MkJvdVdcUy1b0GTTxGJaPa6zDyzw~1lg4agu2ks-2A9YCRydoDx6RmowltHHkikd9cpKJZ4x~ciYWV8WHdbRlgfYAGlLCHoWIX6FAKk1BGxqKfUeGXiI-~mJplszUCOKW~9hXvooVYQvkra~ERR9oOK7A2S~GRA-EcD~ewrqCafwtAbS7~LVmEHtfkE4y5qpobnHCHQCHHa-R5kA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+      imageSrc: 'https://s3-alpha-sig.figma.com/img/e37b/f7a0/61839add0eaa454eadb0bc28afde8272?Expires=1695600000&Signature=V9Sy9W7aDAreYFkIUXO~zPe0OnkmSXQRyqs5av9FLDZy62Fm1ep0CgsVG~vY3QzNYHRcB91JDG0WMIKs75n-R4qcSHDyxKJ3WRG2xa~KbmVynv53YTvz6Hq9UHrKSMmmIjqoC30rXK9u-OQhZXn8uxRMo7h6ts8O71AciAKRF~dtl0iwdaU~Drz0kPSOE5XH4G30lv93qCou4tI1w7ENgcTyXs~BW5dSUvxQfveaj7eeiszhTxa6dllrhOsYXSrZyjWWaacuGSGE42NIIPwgur6j5z40ioIQoGF78ORkD028TY38QE~XLT0bMmFnnx4ZpAfSZcQCc5i7-3WV4-5xeg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
       cost: '$ 4400.00',
       rating: '5',
       temperature: '15 °C',
@@ -97,7 +97,7 @@ export default function Home() {
     {
       id: 5,
       name: 'Jupiter',
-      imageSrc: 'https://s3-alpha-sig.figma.com/img/be55/a4f7/8a82361ca635b25abfcafdfbd660d926?Expires=1693180800&Signature=qpbAmUB9UqyuXdYrEjwjxWrNyv0Ev2DMgNuBlsIvjTNnoapKlZa9sHvW7ocMa1SShgjnAVSoNkm54LUtAZKDBMR9CdzZ1S3mscxjzNzGwo3TNuOAttp53CtHSr~wQhMsGRrqo70WK~mcAabnnHzA0H20BpXZVgRf0OAlA0GUS81qdHQpNqG3JPmsWXbUGARfmowHwvdUv0VW-MwD8ZgAP0JGlMoYL1kugJIvu1EzVAM3I1O~BW~LtYKkdZB9pYy-XIphDUGSkLSJZz7Rz5dCpjwbiV4~q~RBgVi7wu6ZBPZP2B3cC5qgFL~fU70X24jhrhlfup7K57~UIcb6O5bgOw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+      imageSrc: 'https://s3-alpha-sig.figma.com/img/be55/a4f7/8a82361ca635b25abfcafdfbd660d926?Expires=1695600000&Signature=nkrcqTuR6wJdtCatwzIeX1N8Svi2aXkyW91R46je~jiaqRhBrZGbMZsdYVAV08KvqAUf81vGvLrHV~h4yHpKqLjYKGSmg~pex8cOinCRBYnejYt9RalyAoeqaWGYez3Xxte1IWeEUqIEbZBmKJcC3iMlEMo-WfAE0aYyH-uAkulLBL0ZVkM5Y45zK3widJ7TVsPnE0w-VOn1JW3stKmcefC4YMYfYzSd6F617y9Wgz1cP5-A-eK43ztYpMff8~cbSNHeXiConmGBZWTlDX-a7WenkLnR3pFxzgYEfzWNoXSQlw22zyFMNW5gnb4ryZM2LumvXwbfyLMbE7~P9nrAfQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
       cost: '$ 4200.00',
       rating: '3.5',
       temperature: '-145 °C',
@@ -109,7 +109,7 @@ export default function Home() {
     {
       id: 6,
       name: 'Saturn',
-      imageSrc: 'https://s3-alpha-sig.figma.com/img/95d1/5a3f/83ebd015165ed7e61b530f0e58b395b5?Expires=1693180800&Signature=ddyGScNS60wzqRWa6A2uWKLETTh9i8NBH17AXvlTjxLSZd76IEzSMi6wm8QE1gJxQjrbKhY~eeGx80BXu--XvjO6nfbfH3x87ACWtHZNn3Ex6kDgVLylxgMTh2luT3s4~Ql4FPU-KyoPLTrbpm1lr5oQ4q6S0doG82xUuwIZZWvHj6MngioC64Y6NQaTp3G9BLYa8agDK1DW8n28FEQNmKSbJ3IeymtBYmW9EmCz1MSV5MBcr8r3xqtz4gD-EJ4Jq1CKY5rxY8CEnZ57lQUZRvo8F6PTUI2h-c7Z1Ijgy0OmHxXwrgmioSLGPVgk-lEfTfOtY3CFWUePXx4gRZKPng__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+      imageSrc: 'https://s3-alpha-sig.figma.com/img/95d1/5a3f/83ebd015165ed7e61b530f0e58b395b5?Expires=1695600000&Signature=FxwWdyxMkbKRto6~AYxRFOpBQWSyb1coLSNF9fixfrVa8iEDdyOjG6tegmLsrQvu9CL-0OLa79gWPLINOfzOfITnV808bmJHkYN28h7YZRN~mb~iXTSNtn6Ok~uUOadoaTlXNdAxpbRbjTj0sTp8ESb3WK3KvhkT5FWCfbP1x9tQ1PzV3ue~br1mY9e0AxQaPaTTT-EzuJAAUmuOJvpyw~0t1HTQj0p5jJQcvqXGgyaR63Z3IU20eAYtPIi823AZ~Es-aEMGY0L3lKc04Ogd-13Nm7N~IP0ggAJLwcMrGi1x8BPQZucoa6eie1PxibbciyNCsnwNscItTkSWnG2u8w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
       cost: '$ 5200.00',
       rating: '4.5',
       temperature: '-178 °C',
@@ -121,7 +121,7 @@ export default function Home() {
     {
       id: 7,
       name: 'Uranus',
-      imageSrc: 'https://s3-alpha-sig.figma.com/img/d510/ffd8/3374e01fbc62b5561b1b54036bf4fbaa?Expires=1693180800&Signature=SWTiY3ung7S0AURFkZ0RQdyw4JrzVxLtu5CtbSE8wDWZGqkedmaR8jxRWRnhFlbfGU5oRds~ijP6qRVx1Y8UmJMCUwqjHplf7V~vD9PlyBl-YyGhHX6hQv01St6zxfv25O8hIvKPePWrPfd-05GyiJLQiJ2Ns8IqV~cHkV33DyGo0czi0HzoNKAz~xot3Nzyk7SCNpUipuDaBGQx6QzAmSdO-uWzJ2oZDRaKoXznFVe7nq-26DxHWTx2zY1e~cXrTSzzx8vD6Yi-xrRNhUlH-G--OX1u3N9TwuVtrhSZqTPCvJ3--yhGYehaWrRvmNgBq1b1MXYJ3KleeOh9OTP4CQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+      imageSrc: 'https://s3-alpha-sig.figma.com/img/be55/a4f7/8a82361ca635b25abfcafdfbd660d926?Expires=1695600000&Signature=nkrcqTuR6wJdtCatwzIeX1N8Svi2aXkyW91R46je~jiaqRhBrZGbMZsdYVAV08KvqAUf81vGvLrHV~h4yHpKqLjYKGSmg~pex8cOinCRBYnejYt9RalyAoeqaWGYez3Xxte1IWeEUqIEbZBmKJcC3iMlEMo-WfAE0aYyH-uAkulLBL0ZVkM5Y45zK3widJ7TVsPnE0w-VOn1JW3stKmcefC4YMYfYzSd6F617y9Wgz1cP5-A-eK43ztYpMff8~cbSNHeXiConmGBZWTlDX-a7WenkLnR3pFxzgYEfzWNoXSQlw22zyFMNW5gnb4ryZM2LumvXwbfyLMbE7~P9nrAfQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
       cost: '$ 6700.00',
       rating: '3',
       temperature: '-224 °C',
@@ -133,7 +133,7 @@ export default function Home() {
     {
       id: 8,
       name: 'Neptune',
-      imageSrc: 'https://s3-alpha-sig.figma.com/img/a690/c71e/91edd4ed35421940fd34234e231428f3?Expires=1693180800&Signature=PnA3eUDBjEZzcgjdCZdhDIC5r7~xONdo3e7efXwxhDeFTO7CE4vltU-iOoacsqzZy9KvXZ4gWaW0Sm2rj-G042y-tDuya1-lM2vXZUakCguroreBMPKhMHR3jcirY9w~6wHecR8MHdLfa71aktVeiuNFS6iyR52mXMWxHmoztr4C-X-2TMWLWzsMlz15UZ1bGdeZK-xtc31MTmIxatDbEuKonqlhfTLX4kIrSJfbZPJvVnoLB54tcC0k-UV3b3Xq8URwXKngb58jbwfsj4Cv~zBXTx-8ufE3Z~JL0JgCV385KN~bCf93LB1LVlWGo5eGp-iVNh92qG7Eq00abwhK-w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+      imageSrc: 'https://s3-alpha-sig.figma.com/img/a690/c71e/91edd4ed35421940fd34234e231428f3?Expires=1695600000&Signature=nznxjCmfSViN30xQB-YEtNUre2dgm9Hkp4aAx0bBEEEk3VNR-WZRlRuGab3HNe6zEyO5D6M0dYvxH5kmrTjmGwqg2CoMoeVbV6SroWwmHQWu7w8Gli8O3fvq36LLTWK6Z6O955hNnhG~qFujUsQ54m09YBaKcnSUspUqlMQAfFdmaVWfQ9eaq1ktHlrPl-3qgtciTtAaenKddbOsGuOjP6fcibc0RdA3~y6y6ExBnGjcY09kWixrjzh03B7SQ3Aaz7GxnEwyIKXXDeR5~7GHOX9hEhNriVnHGqljt6y-GesMMhJ-Pt58NrPaZB0u0QO1xzcnJBxklUZVXN0AKmFnsw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
       cost: '$ 8200.00',
       rating: '4.7',
       temperature: '-218 °C',
